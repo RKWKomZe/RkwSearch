@@ -1,0 +1,9 @@
+<div class="searchbox">
+	<label for="searchbox-search"><f:translate key="partials_search_form_fields_default.searchfieldLabel" /></label>
+	<f:form.textfield type="search" id="searchbox-search" class="search" placeholder="<f:translate key='partials_search_form_fields_default.searchfieldPlaceholder' />" name="searchFilter[searchString]" value="{searchFilter.searchString}" additionalAttributes="{aria-controls: '{configForm.ariaControls}', autocomplete:'off', data-special-keywords:'{configForm.specialKeywords}', data-max-chars:'{configForm.delayLettersForAjax}', data-delay:'{configForm.delayTimeForAjax}', tabindex:'1'}"   />
+</div>
+<div class="filter search-filter hidden-at-start">
+	<f:render partial="Search/Form/Filters/Department" arguments="{_all}"  />
+	<f:render partial="Search/Form/Filters/DocumentType" arguments="{_all}"  />
+	<f:render partial="Search/Form/Filters/Project" arguments="{_all}"  />
+</div>

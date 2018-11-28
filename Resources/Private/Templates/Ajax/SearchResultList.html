@@ -1,0 +1,53 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+	<f:if condition="{searchResult}">
+		<f:then>
+			<f:if condition="{action} == 'publicationsSpecial'">
+				<f:then>
+					<f:render partial="<rkwSearch:GetPartial type='Publications' subPath='Search/Result/List'/>" arguments="{_all}" />
+				</f:then>
+				<f:else>
+					<f:if condition="{action} == 'publicationsSeries'">
+						<f:then>
+							<f:render partial="<rkwSearch:GetPartial type='Publications' subPath='Search/Result/List'/>" arguments="{_all}" />
+						</f:then>
+						<f:else>
+							<f:render partial="<rkwSearch:GetPartial type='{template}' subPath='Search/Result/List'/>" arguments="{_all}" />
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:if condition="{searchResultEmptyHtml}">
+				<f:then>
+					<f:if condition="{action} == 'example'">
+						<f:then>
+							<div><p class="text-message"><f:translate key="templates_search_example.noResults" extensionName="rkwSearch"  /></p></div>
+						</f:then>
+						<f:else>
+							<div><f:format.raw>{searchResultEmptyHtml}</f:format.raw></div>
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<div><f:render partial="Search/EmptyResult" arguments="{_all}" /></div>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>

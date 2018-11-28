@@ -1,0 +1,32 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{projects}">
+	<p>
+		<label for="project-select" class="hide"><f:translate key="partials_search_form_filters_project.label" /></label>
+		<select id="project-select" name="tx_rkwsearch_rkwsearch[searchFilter][project]" class="secondary ajax-submit" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_project.ariaLabel', arguments:{0: '{project.name}'} )}">
+
+			<f:if condition="{searchFilter.project}==''">
+				<f:then>
+					<option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_project.showAll" /></option>
+				</f:then>
+				<f:else>
+					<option value="" tabindex="1" ><f:translate key="partials_search_form_filters_project.showAll" /></option>
+				</f:else>
+			</f:if>
+			<f:for each="{projects}" as="project">
+				<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.project}' string2='{project.shortName}'/>">
+					<f:then>
+						<option value="{project.shortName}" selected="selected">
+							{project.shortName}
+						</option>
+					</f:then>
+					<f:else>
+						<option value="{project.shortName}" >
+							{project.shortName}
+						</option>
+					</f:else>
+				</f:if>
+			</f:for>
+		</select>
+	</p>	
+</f:if>

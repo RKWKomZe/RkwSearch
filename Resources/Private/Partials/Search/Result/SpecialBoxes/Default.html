@@ -1,0 +1,18 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<a href="{box.item.uid}" class="box {box.cssClassSize}" target="{config.linkTarget}" title="{box.item.title}">
+	<header>
+		<p>
+			{box.item.title}
+		</p>
+	</header>
+	<f:if condition="{box.item.previewImage}" >
+		<div class="box-content">
+			<figure><f:image src="{box.item.previewImage}" alt="{box.item.title}" width="320"  /></figure>
+		</div>
+	</f:if>
+	<footer>
+		<p class="icon-article">{box.item.class}</p>
+	</footer>
+</a>
+

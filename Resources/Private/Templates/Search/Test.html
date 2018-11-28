@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+	<h1>Test for Search</h1>
+
+	<f:flashMessages renderMode="div" />
+
+	<f:form action="test"  name="searchForm" method="post">
+
+		<h2>Input</h2>
+		<f:form.textarea name="content" style="height:400px; width:800px;" value="{content}" />
+		<f:form.button type="submit">send</f:form.button>
+
+		<h2>Stripped HTML:</h2>
+		<pre style="height:100px; width:800px; overflow-y:scroll; border:1px solid orange">{strippedHtml}</pre>
+		<div style="height:400px; width:800px; overflow-y:scroll; border:1px solid orange">{strippedHtml}</div>
+
+
+		<h2>Tag result raw:</h2>
+		<pre style="height:400px; width:800px; overflow-y:scroll; border:1px solid orange">{tagResult}</pre>
+
+		<h2>Tag result filtered:</h2>
+		<pre style="height:400px; width:800px; overflow-y:scroll; border:1px solid orange">{tagResultFiltered}</pre>
+
+		<h2>Analyse result raw:</h2>
+		<pre style="height:400px; width:800px; overflow-y:scroll; border:1px solid orange">{analyseResultRaw}</pre>
+
+		<h2>Analyse result sorted:</h2>
+		<pre style="height:400px; width:800px; overflow-y:scroll; border:1px solid orange">{analyseResultSorted}</pre>
+
+
+	</f:form>
+</f:section>
+

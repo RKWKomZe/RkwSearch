@@ -1,0 +1,1 @@
+Usually we don't need PhpUnitTests for models and repositories since they do not implement any special functions.

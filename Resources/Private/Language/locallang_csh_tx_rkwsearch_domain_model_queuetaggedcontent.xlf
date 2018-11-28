@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-19T11:12:20Z" product-name="rkw_search">
+		<header/>
+		<body>
+			<trans-unit id="serialized.description">
+				<source>serialized</source>
+			</trans-unit>
+			<trans-unit id="rid_mapping.description">
+				<source>ridMapping</source>
+			</trans-unit>
+            <trans-unit id="status.description">
+                <source>status</source>
+            </trans-unit>
+            <trans-unit id="message.description">
+                <source>message</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

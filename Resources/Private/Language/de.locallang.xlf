@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
+		<header/>
+		<body>
+
+
+            <!-- SearchController -->
+            <trans-unit id="tx_rkwsearch.SearchController.error.invalid_query_1434024949">
+                <source>Error while searching.</source>
+                <target>Upps, da ist was schief gegangen. Bitte versuchen Sie es erneut.</target>
+            </trans-unit>
+
+
+
+            <!-- Backend-Messages from e.g. Hooks -->
+			<trans-unit id="tx_rkwsearch.backend.error.header">
+				<source>Fatal Error</source>
+				<target>Fataler Fehler</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.error.fatal_error_1399293930">
+				<source>An error occurred when trying to communicate with the OrientDB database. Please contact your system admin. Error: %s</source>
+				<target>Bei der Kommunikation mit der OrientDB- Datenbank ist ein Fehler aufgetreten. Bitte kontaktieren Sie Ihren Systemadministrator. Fehlermeldung: %s</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.header">
+				<source>Notice</source>
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.relation_error_1401886050">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Please make sure, that all related records are submitted into the search database by saving them again and then save this record again. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Verknüpfungen zu anderen Datensätzen könnten gesetzt werden. Bitte stellen Sie sicher, dass die mit diesem Datensatz verknüpften Datensätze in die Suchdatenbank übertragen wurden, indem Sie diese erneut speichern und speichern Sie anschließend dieses Datensatz erneut. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.workspace_error_1401889803">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Some of the records that are related to this record are not yet published. They have been ignored. Please publish them to the live environment and then save this record again to submit all set relations to the search database. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Beziehungen zu anderen Datensätzen könnten gesetzt werden. Einige der verknüpften Datensätze wurden noch nicht veröffentlicht. Bitte veröffentlichen Sie diese Datensätze und speichern Sie anschließend diesen Datensatz erneut, um alle gesetzten Verknüpfungen an die Suchdatenbank zu übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.little_problem_1399294227">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but could not be submitted into the search database. If you just edited or created a content-element on a page, try opening the page properties of the current page and save them again. This should transfer the whole page including it's contents to OrientDB. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, konnten aber nicht in die Suchdatenbank übertragen werden. Falls Sie gerade ein Inhaltselement bearbeitet oder angelegt haben, versuchen Sie die Seiteneigenschaften der aktuellen Seite zu öffnen und zu speichern. Dies sollte die gesamte Seite mit ihren Inhalten in die Suchdatenbank übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch.backend.warning.not_in_rootline_1495445181">
+                <source>Dataset has been ignored by OrientDB database, because it is not within the defined rootline.</source>
+                <target>Der Datensatz wurde von der OrientDB- Datenbank ignoriert, weil er nicht in der definierten Rootline liegt.</target>
+            </trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.message.header">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.message.successfully_saved_1399294437">
+				<source>Your changes have been successfully submitted to OrientDB database and will be displayed in the search results soon.</source>
+				<target>Ihre Änderungen wurden erfolgreich in die OrientDB- Datenbank übertragen und erscheinen in Kürze in den Suchergebnissen.</target>
+			</trans-unit>
+
+
+			<!-- Templates/Search/PageNotFound.html -->
+			<trans-unit id="templates_search_pageNotFound.noAlternativeResults">
+				<source>Sorry, but there are no alternative results.</source>
+				<target>Leider konnten wir keine passenden Alternativen finden.</target>
+			</trans-unit>
+
+
+			<!-- Templates/Search/Example.html -->
+			<trans-unit id="templates_search_example.noResults">
+				<source>Sorry, but there are no result for your criteria. Try other options.</source>
+				<target><![CDATA[Leider haben wir für diese Kombination an Filterkriterien derzeit keine Praxisbeispiele.<br/>Versuchen Sie es doch mal damit, einen der gewählten Filter zurückzusetzen.]]></target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Fields/Default.html -->
+			<trans-unit id="partials_search_form_fields_default.searchfieldPlaceholder">
+				<source>Please enter search string...</source>
+				<target>Hier Suchbegriffe eingeben...</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_fields_default.searchfieldLabel">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/Department.html -->
+			<trans-unit id="partials_search_form_filters_department.label">
+				<source>Topic:</source>
+				<target>Themen:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_department.labelLong">
+				<source>Filter results by topic:</source>
+				<target>Ergebnisse nach Themen filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_department.ariaLabelAll">
+				<source>Show all topics</source>
+				<target>Zeige alle Themen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_department.ariaLabel">
+				<source>Filter by topic: %s</source>
+				<target>Filtere nach Thema: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_department.showAll">
+				<source>All</source>
+				<target>Alle Themen</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/Sectors.html -->
+			<trans-unit id="partials_search_form_filters_sector.label">
+				<source>Sector:</source>
+				<target>Branchen:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_sector.labelLong">
+				<source>Filter results by sector:</source>
+				<target>Ergebnisse nach Branchen filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_sector.ariaLabelAll">
+				<source>Show all sectors</source>
+				<target>Zeige alle Branchen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_sector.ariaLabel">
+				<source>Filter by sector: %s</source>
+				<target>Filtere nach Branche: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_sector.showAll">
+				<source>All</source>
+				<target>Alle Branchen</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/EnterpriseSize.html -->
+			<trans-unit id="partials_search_form_filters_enterpriseSize.label">
+				<source>Enterprise Size:</source>
+				<target>Unternehmensgröße:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_enterpriseSize.labelLong">
+				<source>Filter results by enterprise sizec:</source>
+				<target>Ergebnisse nach Unternehmensgröße filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_enterpriseSize.ariaLabelAll">
+				<source>Show all enterprise sizes</source>
+				<target>Zeige alle Unternehmensgrößen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_enterpriseSize.ariaLabel">
+				<source>Filter by enterprise site: %s</source>
+				<target>Filtere nach Unternehmensgröße: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_enterpriseSize.showAll">
+				<source>All</source>
+				<target>Alle Unternehmensgrößen</target>
+			</trans-unit>
+
+
+
+			<!-- Partials/Search/Form/Filters/category.html -->
+			<trans-unit id="partials_search_form_filters_category.label">
+				<source>Category:</source>
+				<target>Thema:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_category.labelLong">
+				<source>Filter results by category:</source>
+				<target>Ergebnisse nach Thema filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_category.ariaLabelAll">
+				<source>Show all categories</source>
+				<target>Zeige alle Themen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_category.ariaLabel">
+				<source>Filter by category: %s</source>
+				<target>Filtere nach Thema: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_category.showAll">
+				<source>All</source>
+				<target>Alle Themen</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/DocumentType.html -->
+			<trans-unit id="partials_search_form_filters_documentType.label">
+				<source>Type:</source>
+				<target>Typ:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_documentType.labelLong">
+				<source>Filter results by type:</source>
+				<target>Ergebnisse nach Dokumententyp filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_documentType.ariaLabelAll">
+				<source>Show all types</source>
+				<target>Zeige alle Dokumententypen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_documentType.ariaLabel">
+				<source>Filter by type: %s</source>
+				<target>Filtere nach Dokumententyp: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_documentType.showAll">
+				<source>All Types</source>
+				<target>Alle Dokumentenarten</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/ConsultantService.html -->
+			<trans-unit id="partials_search_form_filters_consultantService.label">
+				<source>Type:</source>
+				<target>Service:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantService.labelLong">
+				<source>Filter results by type:</source>
+				<target>Ergebnisse nach Service filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantService.ariaLabelAll">
+				<source>Show all types</source>
+				<target>Zeige alle Services</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantService.ariaLabel">
+				<source>Filter by type: %s</source>
+				<target>Filtere nach Service: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantService.showAll">
+				<source>All Types</source>
+				<target>Alle Services</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/ConsultantLocation.html -->
+			<trans-unit id="partials_search_form_filters_consultantLocation.searchfieldPlaceholder">
+				<source>Enter ZIP or Address</source>
+				<target>PLZ oder Adresse eingeben</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantLocation.ariaLabel">
+				<source>Filter by ZIP or Address</source>
+				<target>Ergebnisse nach Postleitzahl oder Adresse filtern</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_consultantLocation.searchButton">
+				<source>Search</source>
+				<target>Suchen</target>
+			</trans-unit>
+
+			<!-- Partials/Search/Form/Filters/Project.html -->
+			<trans-unit id="partials_search_form_filters_project.label">
+				<source>Project:</source>
+				<target>Projekt:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_project.labelLong">
+				<source>Filter results by project:</source>
+				<target>Ergebnisse nach Projekt filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_project.ariaLabelAll">
+				<source>Show all projects</source>
+				<target>Zeige alle Projekte</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_project.ariaLabel">
+				<source>Filter by project: %s</source>
+				<target>Filtere nach Projekt: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_project.showAll">
+				<source>All Projects</source>
+				<target>Alle Projekte</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Form/Filters/Year.html -->
+			<trans-unit id="partials_search_form_filters_year.label">
+				<source>Year:</source>
+				<target>Jahr:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_year.labelLong">
+				<source>Filter results by year:</source>
+				<target>Ergebnisse nach Jahr filtern:</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_year.ariaLabelAll">
+				<source>Show all years</source>
+				<target>Zeige alle Jahre</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_year.ariaLabel">
+				<source>Filter by year: %s</source>
+				<target>Filtere nach Jahr: %s</target>
+			</trans-unit>
+			<trans-unit id="partials_search_form_filters_year.showAll">
+				<source>All years</source>
+				<target>Alle Jahre</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Result/Boxes/Authors.html -->
+			<trans-unit id="partials_search_result_boxes_authors.documentType">
+				<source>Author</source>
+				<target>Kontakt</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Result/Boxes/Default/Publications.html -->
+			<trans-unit id="partials_search_result_boxes_default_publications.labelChapter">
+				<source>Chapter</source>
+				<target>Kapitel</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_boxes_default_publications.labelFrom">
+				<source>From</source>
+				<target>Aus</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/Result/Boxes/Consultants.html -->
+			<trans-unit id="partials_search_result_boxes_consultant.labelKilometers">
+				<source>km</source>
+				<target>km</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_boxes_consultant.labelTelephone">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_boxes_consultant.labelWebsite">
+				<source>Website</source>
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_boxes_consultant.labelConsultant">
+				<source>Consultant</source>
+				<target>Energieberater</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_boxes_consultant.labelConsultantRkw">
+				<source>RKW Network</source>
+				<target>RKW Netzwerk</target>
+			</trans-unit>
+
+
+
+			<!-- Partials/Search/Result/SpecialBoxes/More.html -->
+			<trans-unit id="partials_search_result_specialBoxes_more.moreLabel">
+				<source>Load more</source>
+				<target>Jetzt mehr anzeigen</target>
+			</trans-unit>
+			<trans-unit id="partials_search_result_specialBoxes_more.moreLabelBefore">
+				<source>Interesting?</source>
+				<target>Interessant?</target>
+			</trans-unit>
+
+
+			<!-- Partials/Search/EmptyResult.html -->
+			<trans-unit id="partials_search_emptyResult.noResult">
+				<source>Sorry, but there are currently no results.</source>
+				<target>Derzeit liegen leider keine passenden Ergebnisse vor.</target>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,34 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{searchFilterLinkParams}">
+	<f:if condition="{config.noAutoloadMore} == 1">
+		<f:then>
+			<f:link.action action="{action}" controller="Search" extensionName="rkwSearch" pluginName="rkwSearch" additionalParams="{searchFilterLinkParams}" id="more-link-{page}" target="{config.linkTarget}" rel="nofollow" class="box publication {box.cssClass}" title="<f:translate key='partials_search_result_specialBoxes_more.moreLabel' extensionName='rkwSearch' />">
+				<div class="cover">
+					<figure><f:cObject typoscriptObjectPath="plugin.tx_rkwsearch.libs.responsivePdfThumbnail" data="EXT:rkw_search/Resources/Public/Images/publications-more.jpg"/></figure>
+				</div>
+				<header>
+					<!--
+					<p>
+						<f:translate key="partials_search_result_specialBoxes_more.moreLabelBefore" extensionName="rkwSearch"  /><br/>
+						<strong><f:translate key="partials_search_result_specialBoxes_more.moreLabel" extensionName="rkwSearch" /></strong>
+					</p> -->
+				</header>
+			</f:link.action>
+		</f:then>
+		<f:else>
+			<f:link.action action="{action}" controller="Search" extensionName="rkwSearch" pluginName="rkwSearch" additionalParams="{searchFilterLinkParams}" id="more-link-{page}" target="{config.linkTarget}" rel="nofollow" class="box publication {box.cssClass} autoload" title="<f:translate key='partials_search_result_specialBoxes_more.moreLabel' extensionName='rkwSearch' />">
+				<div class="cover">
+					<figure><f:cObject typoscriptObjectPath="plugin.tx_rkwsearch.libs.responsivePdfThumbnail" data="EXT:rkw_search/Resources/Public/Images/publications-more.jpg"/></figure>
+				</div>
+				<header>
+					<!--
+					<p>
+						<f:translate key="partials_search_result_specialBoxes_more.moreLabelBefore" extensionName="rkwSearch" /><br/>
+						<strong><f:translate key="partials_search_result_specialBoxes_more.moreLabel" extensionName="rkwSearch" /></strong>
+					</p>-->
+				</header>
+			</f:link.action>
+		</f:else>
+	</f:if>
+</f:if>

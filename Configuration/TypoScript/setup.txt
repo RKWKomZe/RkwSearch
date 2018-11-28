@@ -1,0 +1,1077 @@
+// #########################################################
+// Extbase Configuration
+// #########################################################
+config.tx_extbase{
+	persistence {
+		classes {
+
+			# make sure ref_index is updated
+			updateReferenceIndex = 1
+
+			\RKW\RkwBasics\Domain\Model\Pages {
+				subclasses {
+					Tx_RkwSearch_Pages = RKW\RkwSearch\Domain\Model\Pages
+
+				}
+			}
+
+			# set model for mapping
+			RKW\RkwSearch\Domain\Model\Pages {
+
+				mapping {
+
+					# set table name to map to
+					tableName = pages
+
+					# on pages tables it's the doktype
+					# if we set an value, we filter by it
+					# if do not set anything, all pages are found
+					recordType =
+
+					# mapping to properties of class
+					columns {
+
+					}
+				}
+			}
+
+
+			# set model for mapping
+			RKW\RkwSearch\Domain\Model\PagesLanguageOverlay {
+
+				mapping {
+
+					# set table name to map to
+					tableName = pages_language_overlay
+
+					# on pages tables it's the doktype
+					# if we set an value, we filter by it
+					# if do not set anything, all pages are found
+					recordType =
+
+					# mapping to properties of class
+					columns {
+						sys_language_uid.mapOnProperty = sysLanguageUid
+					}
+				}
+			}
+
+
+			# Overwrite some fields in PDF2Content
+			BM\BmPdf2content\Domain\Model\Pages {
+				mapping {
+
+					# mapping to properties of class
+					columns {
+						tx_rkwsearch_pubdate.mapOnProperty = pubDate
+					}
+				}
+			}
+
+			\RKW\RkwBasics\Domain\Model\Category {
+				subclasses {
+					Tx_RkwSearch_Category = RKW\RkwSearch\Domain\Model\Category
+
+				}
+			}
+
+			# set model for mapping
+			RKW\RkwSearch\Domain\Model\Category{
+
+				mapping {
+
+					# set table name to map to
+					tableName = sys_category
+
+					# on pages tables it's the doktype
+					# if we set an value, we filter by it
+					# if do not set anything, all pages are found
+					recordType =
+
+					# mapping to properties of class
+					columns {
+
+					}
+				}
+			}
+
+
+		}
+	}
+}
+
+// #########################################################
+// Plugin Configuration
+// #########################################################
+
+plugin.tx_rkwsearch  {
+    persistence {
+    	storagePid = {$plugin.tx_rkwsearch.persistence.storagePid}
+    }
+
+	view {
+		templateRootPath = {$plugin.tx_rkwsearch.view.templateRootPath}
+		partialRootPath = {$plugin.tx_rkwsearch.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_rkwsearch.view.layoutRootPath}
+	}
+
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+
+	settings {
+
+
+
+		// ===================================================
+
+		orientDb {
+			repository {
+				persistence {
+					driver = binary
+				}
+			}
+		}
+
+		// ===================================================
+
+	  	indexing {
+
+			fields {
+
+				DocumentPages {
+					fieldList = title,subtitle,abstract,keywords,content
+					fieldListTitle = title,subtitle
+				}
+				DocumentAuthors {
+					fieldList = firstname,lastname,email
+					fieldListTitle = firstname,lastname
+					separator = 32
+				}
+				DocumentDepartments {
+					fieldList = name
+					fieldListTitle = name
+				}
+				DocumentProjects {
+					fieldList = name,shortName
+					fieldListTitle = title
+				}
+                // @toDo: Finally delete when tested
+                // DocumentConsultants {
+				//	fieldList = company
+				//	fieldListTitle = company
+				//}
+			}
+
+			keywords {
+
+				vertexClass = KeywordVariations
+				edgeClass {
+					keyword2content = EdgeContains
+				}
+			}
+
+		}
+
+		// ===================================================
+
+		import {
+
+            rootPages = {$plugin.tx_rkwsearch.settings.import.rootPages}
+			varnish {
+				clearPageList = {$plugin.tx_rkwsearch.settings.import.varnish.clearPageList}
+			}
+		}
+
+
+		// ===================================================
+
+		queryFactory {
+
+			// default language = 0
+			0 {
+
+				selectFields = uid, pubdate, title, subtitle, abstract, uid, titleBefore, firstname, lastname, rkwNetwork, company, address, zip, city, telephone, fax, email, www, pdfImport, pdfImportSub
+				selectFieldsEdges = first(outE('EdgeType')).inV('DocumentTypes').name AS documentType, first(outE('EdgeType')).inV('DocumentTypes').boxTemplateName AS boxTemplateName, first(outE('EdgeDepartment')).inV('DocumentDepartments').cssClass AS cssClass, first(outE('EdgeImportParent')).inV('DocumentPages').uid AS pdfImportParentUid
+				searchClass = DocumentAbstract
+				excludeClassList = DocumentType, DocumentSeries, DocumentDepartments, DocumentProjects, DocumentConsultants, DocumentCategory, DocumentSector, DocumentEnterpriseSize
+				excludeClassListRelated = DocumentType, DocumentSeries, DocumentDepartments, DocumentProjects, DocumentConsultants, DocumentCategory, DocumentSector, DocumentEnterpriseSize, DocumentAuthors
+
+				where = (NOT (pdfImportSub = 1))
+
+				orderBy {
+					pubdate = DESC
+				}
+
+				filterMapping {
+                    _default = keywords
+                    autor = author
+                    typ = type
+                    fachbereich = department
+                    von = dateFrom
+                    bis = dateTo
+                    keyword = keywords
+                    publikation = publication
+				 	publikationspecial = publicationSpecial
+                    news = news
+                    newsArticle = newsArticle
+                    reihe = series
+                    projekt = project
+                    branche = sector
+                    unternehmensgröße = enterpriseSize
+                    kategorie = category
+				}
+
+				resultsPerPage = 20
+
+				// filters
+				filters {
+
+				 	author {
+
+						edgeClass = EdgeAuthor
+						edgeDirection = out
+
+						selectFieldsAddition = firstname, lastname
+						orderBy {
+							lastname = ASC
+						}
+
+						searchField = firstname
+						searchFieldTwo = lastname
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+
+					}
+
+				 	department {
+
+						edgeClass = EdgeDepartment
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+
+					}
+
+					type {
+
+						edgeClass = EdgeType
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+
+					series {
+
+						edgeClass = EdgeSeries
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+					enterpriseSize {
+
+						edgeClass = EdgeEnterpriseSize
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+					category {
+
+						edgeClass = EdgeCategory
+						edgeDirection = out
+
+						selectFieldsAddition = title
+
+						searchField = title
+						searchFieldFuzzy = titleFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+					sector {
+
+						edgeClass = EdgeSector
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+				 	project {
+
+						edgeClass = EdgeProject
+						edgeDirection = out
+
+						selectFieldsAddition = name
+
+						searchField = name
+						searchFieldFuzzy = nameFuzzy
+						searchFieldTwo = shortName
+						searchFieldTwoFuzzy = shortNameFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+
+					publication {
+
+                        selectFieldsAddition = pdfImport, pdfImportSub
+
+                        orderBy {
+                            pubdate = DESC
+                        }
+
+                        searchField = pdfImport
+                        searchFieldTwo = pdfImportSub
+                    }
+
+					publicationSpecial {
+
+                        selectFieldsAddition = pdfImport, pdfImportSub
+
+                        orderBy {
+                            pubdate = DESC
+                        }
+
+                        searchField = pdfImport
+                        searchFieldTwo = pdfImportSub
+                    }
+
+                    news {
+
+                        selectFieldsAddition = pdfImportSub
+                        orderBy {
+                            pubdate = DESC
+                        }
+
+                        searchField = pdfImportSub
+                        searchFieldTwo = pubdate
+                    }
+
+                    newsArticle {
+
+                        selectFieldsAddition = pdfImport, pdfImportSub
+                        orderBy {
+                            pubdate = DESC
+                        }
+
+                        searchField = pdfImport
+                        searchFieldTwo = pdfImportSub
+						searchFieldThree = pubdate
+
+                    }
+
+
+                    events {
+
+                        searchClass = DocumentEvents
+
+                        orderBy {
+                            title = ASC
+                        }
+					}
+
+
+					dateFrom {
+
+						selectFieldsAddition =
+						orderBy {
+
+						}
+
+						searchFields  {
+							2 = pubdate
+						}
+
+						monthMapping {
+
+							Januar = 1
+							Februar = 2
+							März = 3
+							Maerz = 3
+							April = 4
+							Mai = 5
+							Juni = 6
+							Juli = 7
+							August = 8
+							September = 9
+							Oktober = 10
+							November = 11
+							Dezember = 12
+						}
+
+					}
+
+					dateTo {
+
+						selectFieldsAddition =
+						orderBy {
+
+						}
+
+						searchFields  {
+							2 = pubdate
+						}
+
+						monthMapping {
+
+							Januar = 1
+							Februar = 2
+							März = 3
+							April = 4
+							Mai = 5
+							Juni = 6
+							Juli = 7
+							August = 8
+							September = 9
+							Oktober = 10
+							November = 11
+							Dezember = 12
+						}
+
+					}
+
+                    /* @toDo: Finally delete when tested
+                    consultant {
+
+					   	searchClass = DocumentConsultants
+						orderBy {
+							distance = ASC
+							company = ASC
+						}
+
+					}
+
+					consultantInternal {
+
+					   	searchField = rkwNetwork
+
+					}
+
+					consultantLocation {
+
+					   	searchClass = DocumentConsultants
+						selectFieldsAddition =
+						orderBy {
+							distance = ASC
+						}
+
+						searchFieldLatitude = latitude
+						searchFieldLongitude = longitude
+					}
+
+					consultantService {
+
+						edgeClass = EdgeService
+						edgeClassTwo = EdgeService
+
+						edgeDirection = out
+						edgeDirectionTwo = out
+
+						selectFieldsAddition = title
+
+						searchField = title
+						searchFieldFuzzy = titleFuzzy
+
+						// conjuctionMapping is case-sensitive!!!
+						// only OR possible here
+						conjunctionMapping {
+							UND = OR
+							ODER = OR
+						}
+					}
+                    */
+
+					keywords {
+
+						selectFieldsAddition = $score AS score
+						orderBy {
+							score = DESC
+							nameLength = DESC
+						}
+
+						searchField = searchContent
+						searchFieldFuzzy = searchContentFuzzy
+
+						searchFieldType = searchContentType
+						searchFieldSize = searchContentSize
+
+						searchFieldTitle = searchContentTitle
+
+						// this is to boost normal results in comparision to fuzzy search
+						searchFieldBoost = 2
+
+						// this is to boost matches in title field!
+						searchFieldTitleBoost = 5
+
+						// conjuctionMapping is case-sensitive!!!
+						conjunctionMapping {
+							UND = AND
+							ODER = OR
+						}
+					}
+				}
+            }
+		}
+
+		// ===================================================
+
+		// Search
+		search {
+
+			emptyResultPid = {$plugin.tx_rkwsearch.settings.search.emptyResultPid}
+            /* @toDo: Finally delete when tested
+            consultantsDetailPid = {$plugin.tx_rkwsearch.settings.search.consultantsDetailPid}
+			consultantsInternalDetailPid = {$plugin.tx_rkwsearch.settings.search.consultantsInternalDetailPid}
+            */
+			authorsDetailPid = {$plugin.tx_rkwsearch.settings.search.authorsDetailPid}
+
+			# settings for publications
+			publications {
+
+				# Boost publications
+				boost = 0
+			}
+
+			# Tolerance for score values for keywords used for related search
+			related {
+				scoreTolerance = {$plugin.tx_rkwsearch.settings.search.related.scoreTolerance}
+				itemsPerHundredSigns = {$plugin.tx_rkwsearch.settings.search.related.itemsPerHundredSigns}
+				minItems = {$plugin.tx_rkwsearch.settings.search.related.minItems}
+			}
+
+			# Config for result boxes
+			boxes {
+
+				default {
+
+					// number of boxes for results
+					numberBigBoxes = 5
+					numberSmallBoxes = 3
+					displayTemplateAlwaysAsBigBox =
+
+					// cropping for text in boxes
+					headerCrop {
+						small = 40
+						half = 70
+						big = 60
+					}
+					contentCrop {
+						small = 0
+						half = 0
+						big = 230
+					}
+					footerCrop {
+						small = 8
+						half = 20
+						big = 20
+					}
+					flagCrop {
+						small = 10
+						half = 30
+						big = 30
+					}
+				}
+
+				publications < .default
+				publications {
+
+					numberBigBoxes = 5
+					numberSmallBoxes = 0
+
+					headerCrop {
+						small = 80
+						half = 80
+						big = 80
+					}
+
+					contentCrop < .headerCrop
+					footerCrop < .headerCrop
+				}
+
+				blog < .publications
+				recent < .publications
+
+                /* @toDo: Finally delete when tested
+                consultants < .publications
+                */
+
+			}
+
+
+            // settings for search-form
+			ariaControls = search-result-section
+
+		}
+
+		// Autocomplete
+		searchAutocomplete {
+
+			// settings for autocomplete
+			delayTimeForAjax = 500
+			delayLettersForAjax = 3
+
+			specialKeywords = --
+
+		}
+
+		// ===================================================
+
+		textHelper {
+
+			// 0 = default language-id
+			0 {
+
+				// stop words
+				stopWords = dr, einer, eine, eines, einem, einen, der, die, das, dass, daß, du, er, sie, es, was, wer, wie, wir, und, oder, ohne, mit, am, im, in, aus, auf, ist, sein, war, wird, ihr, ihre, ihres, als, für, von, dich, dir, mich, mir, mein, kein, durch, wegen
+
+				// pregReplace-filter for text
+				textFilterRegExpr {
+
+					// grouping
+					default {
+
+						// remove some signs
+						1 {
+							search = /(„)|(“)|(”)|(")|(‚)|(‘)|(»)|(«)|(›)|(‹)|(€)/i
+							replace = / /
+						}
+
+						// remove stuff in brackets, web-addresses and emails
+						2 {
+							search = /(\([^\)]+\))|(((http:\/\/)|(www\.))([A-Za-z0-9\.\/\-_\#]+))/i
+							replace = //
+						}
+
+						// replace some special signs by corresponding words
+						3 {
+							search = /(&)|(\+)/i
+							replace = / und /
+						}
+					}
+				}
+			}
+		}
+
+
+		// ===================================================
+
+		treeTagger {
+
+			// 0 = default language-id
+			0 {
+				// scripts for tagger
+				scripts {
+					tokenizer = cmd/utf8-tokenize.perl
+					tagger = bin/tree-tagger
+					abbrList = lib/german-abbreviations-utf8
+					parFile = lib/german-utf8.par
+					lexFile = lib/german-lexicon-utf8.txt
+					filter = cmd/filter-german-tags
+                	cmdDirectory = cmd
+                	binDirectory = bin
+
+				}
+
+				// passed as parameter to textHelper
+				// mainly used to get keywords for autocomplete
+				textFilterRegExpr {
+
+					// remove some signs
+					1 {
+						search = /(„)|(“)|(”)|(")|(‚)|(‘)|(»)|(«)|(›)|(‹)|(€)/i
+						replace = / /
+					}
+
+					// remove stuff in brackets, web-addresses and emails
+					2 {
+						search = /(\([^\)]+\))|(((http:\/\/)|(www\.))([A-Za-z0-9\.\/\-_\#]+))|([0-9]+[a-z]{1,4})|([a-z0-9_\-]+@[a-z0-9_\-]+\.[a-z]{1,4})/i
+						replace = //
+					}
+
+					// replace dashes by dots
+					3 {
+						search = /(\s—\s?)|(\s-\s?)/i
+						replace = /. /
+					}
+
+					// replace some special signs by corresponding words
+					4 {
+						search = /(&)|(\+)/i
+						replace = / und /
+					}
+
+				}
+
+
+				// options for tagger
+				options {
+					options = -token -lemma -sgml -pt-with-lemma
+				}
+
+
+				// word filter for tagging
+				filter {
+
+					distance {
+
+						ignoreCardinalNumbers = 0
+						ignoreDoubles = 1
+						ignoreWords = Abb
+						ignoreBaseWords = sein, haben, werden, Jahr, Thema, Uhr
+						minWordLength = 2
+						alwaysUseBase = VVFIN
+
+						definition {
+
+							// ###############################################################
+							// NN as cur
+							// ###############################################################
+
+							// fetch one or two or three
+							10 {
+								cur = NN
+								prev = NN
+								next = NN
+							}
+
+							// fetch NN plus something pretended
+							20 {
+								cur = NN
+								prev = NN,VVINF
+								prevFiller = VAFIN,VVFIN
+								matchAll = 1
+								combineKeywords = 1
+							}
+
+							// fetch NN plus something appended
+							/*
+							30 {
+								cur = NN
+								next = NN,VVINF,VVFIN,PTKVZ
+								prev = APPR
+								nextFiller = VAFIN,APPR
+								matchAll = 1
+								combineKeywords = 1
+							}
+
+
+							// fetch larger strings with variable tags
+							40 {
+								cur = NN
+								next = NN,VVINF,VVPP,VAPP,VVFIN,PTKVZ,CARD,NE,ADJD
+								nextFiller = APPR,KON,ART,APPRART,ADJA,PIDAT,PIAT,PIS,VAFIN
+								prev = KOKOM,APPRART,APPR,NN,ADJA,ADJD,CARD
+								prevFiller = NE,KON,ART,PIDAT,PIAT,PIS,VAFIN,VVFIN
+								combineKeywords = 1
+							}
+							*/
+
+							// fetch larger strings with variable tags
+							50 {
+								cur = NN
+								next = NN,VVINF,VVFIN,NE,ADJD
+								nextFiller = APPR,KON,ART,APPRART,ADJA,PIDAT,PIAT,PIS,VAFIN
+								prev = APPRART,APPR,NN,ADJA,ADJD
+								prevFiller = NE,KON,ART,PIDAT,PIAT,PIS,VAFIN,VVFIN
+								combineKeywords = 1
+							}
+
+							// ###############################################################
+							// NN as cur
+							// ###############################################################
+
+							// fetch one or two or three
+							100 {
+								cur = NE
+								prev = NE
+								next = NE,NN
+								noWeight = 1
+							}
+
+
+							// ###############################################################
+							// Specials
+							// ###############################################################
+
+							// e.g. "Internet der Dinge"
+							10001 {
+
+								cur = NN
+								next = NN
+								nextFiller = NE,APPR,ART
+								nextMaxDistance = 2
+								matchAll = 1
+								combineKeywords = 1
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// make typoscript available from BE context (e.g. for hooks)
+module.tx_rkwsearch.settings < plugin.tx_rkwsearch.settings
+
+// #########################################################
+// AJAX Configuration
+// #########################################################
+TxRkwSearchAjaxPage = PAGE
+TxRkwSearchAjaxPage {
+
+
+	typeNum = {$plugin.tx_rkwsearch.settings.typeNumAjax}
+
+	config {
+
+    	disableAllHeaderCode = 1
+    	xhtml_cleaning = 0
+    	admPanel = 0
+    	no_cache = 0
+    	debug = 0
+
+    	additionalHeaders.10.header = Content-type: application/json
+    	metaCharset = utf-8
+
+		index_enable = 0
+		index_metatags = 0
+		index_externals = 0
+  	}
+
+
+  	10 = USER_INT
+  	10 {
+		userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+		extensionName = RkwSearch
+		pluginName = Rkwsearch
+		vendorName = RKW
+		controller = Search
+		switchableControllerActions {
+
+			# Again: Controller-Name and Action
+			Search {
+				1 = search
+				2 = news
+				3 = home
+				4 = recent
+				5 = publications
+				6 = publicationsSpecial
+				7 = events
+				8 = related
+				9 = blog
+				10 = publicationsSeries
+				11 = series
+                /* @toDo: Finally delete when tested
+                12 = consultants
+				13 = consultantsInternal
+                */
+				14 = example
+				15 = recentArticle
+				16 = pageNotFound
+			}
+		}
+
+		view < plugin.tx_rkwsearch.view
+		persistence < plugin.tx_rkwsearch.persistence
+		settings < plugin.tx_rkwsearch.settings
+
+  	}
+}
+
+#===============================================================
+
+TxRkwSearchNotFoundPage = PAGE
+TxRkwSearchNotFoundPage {
+
+
+	typeNum = {$plugin.tx_rkwsearch.settings.typeNumPageNotFound}
+
+	config {
+
+    	disableAllHeaderCode = 1
+    	admPanel = 0
+    	no_cache = 0
+    	debug = 0
+
+    	additionalHeaders.10.header = Content-type: application/json
+    	metaCharset = utf-8
+
+		index_enable = 0
+		index_metatags = 0
+		index_externals = 0
+  	}
+
+    10 = COA_INT
+    10 {
+        10 = CONTENT
+        10 < styles.content.get
+        10.wrap = <div class="no-search-results">|</div>
+    }
+
+}
+
+
+// #########################################################
+// Various
+// #########################################################
+plugin.tx_rkwsearch.libs {
+
+
+	responsiveImageThumbnail = IMAGE
+	responsiveImageThumbnail {
+
+		file {
+			import.current = 1
+			treatIdAsReference = 1
+			maxW = 450
+		}
+
+
+		# Inherit configuration from tt_content and rkw_basics
+		layout < tt_content.image.20.1.layout
+		layoutKey = picture
+		sourceCollection < plugin.tx_rkwbasics.libs.responsiveImages.sourceCollection
+
+		# set configuration for sourceCollection
+		sourceCollection {
+
+			mobile.maxW.override = 450
+			mobile.maxW.override.if {
+				value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.mobile}
+				isLessThan = 450
+			}
+			mobileRetina2.maxW.override < .mobile.maxW.override
+
+			tablet.maxW.override < .mobile.maxW.override
+			tablet.maxW.override.if.value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.tablet}
+			tabletRetina2.maxW.override < .tablet.maxW.override
+			tabletRetina3.maxW.override < .tablet.maxW.override
+
+			desktop.maxW.override < .mobile.maxW.override
+			desktop.maxW.override.if.value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.desktop}
+            desktopRetina2.maxW.override < .desktop.maxW.override
+		}
+	}
+
+	responsiveLogoThumbnail < .responsiveImageThumbnail
+	responsiveLogoThumbnail {
+		file.maxW = 450
+		sourceCollection {
+
+			mobile.maxW.override = 440
+			mobile.maxW.override.if.isLessThan = 440
+		}
+	}
+
+
+	# PDF Thumbnails
+	responsivePdfThumbnail = IMAGE
+	responsivePdfThumbnail {
+
+		file {
+			import.current = 1
+			ext = png
+			maxW = 215
+		}
+
+		# Inherit configuration from tt_content
+		layout < tt_content.image.20.1.layout
+		layoutKey = picture
+		sourceCollection < plugin.tx_rkwbasics.libs.responsiveImages.sourceCollection
+
+		# set configuration for sourceCollection
+		sourceCollection {
+
+			mobile.maxW.override = 215
+			mobile.maxW.override.if {
+				value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.mobile}
+				isLessThan = 215
+			}
+			mobileRetina2.maxW.override < .mobile.maxW.override
+
+			tablet.maxW.override < .mobile.maxW.override
+			tablet.maxW.override.if.value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.tablet}
+			tabletRetina2.maxW.override < .tablet.maxW.override
+			tabletRetina3.maxW.override < .tablet.maxW.override
+
+			desktop.maxW.override < .mobile.maxW.override
+			desktop.maxW.override.if.value = {$plugin.tx_rkwbasics.settings.responsiveImages.breakpoints.desktop}
+            desktopRetina2.maxW.override < .desktop.maxW.override
+		}
+	}
+}
+
+// #########################################################
+// Various
+// #########################################################
+module.tx_rkwsearch < plugin.tx_rkwsearch

@@ -1,0 +1,25 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+	<f:if condition="{searchResult}">
+		<f:render partial="<rkwSearch:GetPartial type='{template}' subPath='Search/Result/List'/>" arguments="{_all}" />
+	</f:if>
+
+	<f:if condition="{errorMessage}">
+		<p class="error">{errorMessage}</p>
+	</f:if>
+
+</f:section>

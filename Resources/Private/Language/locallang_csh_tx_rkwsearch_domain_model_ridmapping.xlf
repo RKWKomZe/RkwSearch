@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T14:56:49Z" product-name="rkw_search">
+		<header/>
+		<body>
+			<trans-unit id="class.description">
+				<source>class</source>
+			</trans-unit>
+			<trans-unit id="rid.description">
+				<source>rid</source>
+			</trans-unit>
+			<trans-unit id="t3table.description">
+				<source>t3table</source>
+			</trans-unit>
+			<trans-unit id="t3id.description">
+				<source>t3id</source>
+			</trans-unit>
+			<trans-unit id="checksum.description">
+				<source>checksum</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

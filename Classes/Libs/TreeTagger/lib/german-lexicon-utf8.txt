@@ -1,0 +1,6 @@
+muessen	VMFIN müssen	VMINF müssen
+Noemí	NE Noemí
+Fernández	NE Fernández
+Sánchez	NE Sánchez
+Gorynia-Pfeffer	NE Gorynia-Pfeffer
+Gorynia	NE Gorynia

@@ -1,0 +1,36 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{consultantServices}">
+	<p>
+		<label for="document-type-select" class="hide"><f:translate key="partials_search_form_filters_consultantService.label" /></label>
+		<select id="document-type-select" name="tx_rkwsearch_rkwsearch[searchFilter][consultantService]" class="secondary ajax" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_consultantService.ariaLabel', arguments:{0: '{consultantService.name}'} )}">
+
+			<f:if condition="{searchFilter.consultantService}==''">
+				<f:then>
+					<option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_consultantService.showAll" /></option>
+				</f:then>
+				<f:else>
+					<option value="" tabindex="1" ><f:translate key="partials_search_form_filters_consultantService.showAll" /></option>
+				</f:else>
+			</f:if>
+			<f:for each="{consultantServices}" as="consultantService">
+				<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.consultantService}' string2='{consultantService.title}'/>">
+					<f:then>
+						<option value="{consultantService.title}" selected="selected">{consultantService.title}</option>
+					</f:then>
+					<f:else>
+						<option value="{consultantService.title}" >{consultantService.title}</option>
+					</f:else>
+				</f:if>
+			</f:for>
+		</select>
+	</p>
+</f:if>
+
+
+
+
+
+
+
+

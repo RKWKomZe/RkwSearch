@@ -1,0 +1,58 @@
+<f:if condition="{years}">
+
+    <p>
+        <label for="year-select" class="hide"><f:translate key="partials_search_form_filters_year.labelLong" /></label>
+        <select id="year-select" name="tx_rkwsearch_rkwsearch[searchFilter][year]" class="secondary ajax" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_year.ariaLabel', arguments:{0: '{year}'} )}">
+
+            <f:if condition="{searchFilter.year}==''">
+                <f:then>
+                    <option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_year.showAll" /></option>
+                </f:then>
+                <f:else>
+                    <option value="" tabindex="1" ><f:translate key="partials_search_form_filters_year.showAll" /></option>
+                </f:else>
+            </f:if>
+            <f:for each="{years}" as="year">
+                <f:if condition="{searchFilter.year}=={year}">
+                    <f:then>
+                        <option value="{year}" selected="selected">{year}</option>
+                    </f:then>
+                    <f:else>
+                        <option value="{year}" >{year}</option>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </select>
+    </p>
+
+    <f:comment>
+        <div>
+            <fieldset>
+                <legend class="hide"><f:translate key="partials_search_form_filters_year.labelLong" /></legend>
+                <ul>
+                    <li class="description" ><f:translate key="partials_search_form_filters_year.label" /></li>
+                    <li>
+                        <f:if condition="{searchFilter.year}==''">
+                            <f:then>
+                                <input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][year]" value="" checked="checked" id="year-all" additionalAttributes="{aria-controls: '{configForm.ariaControls}'"><label for="year-all"><f:translate key="partials_search_form_filters_year.showAll" /></label>
+                            </f:then>
+                            <f:else>
+                                <input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][year]" value="" id="year-all" additionalAttributes="{aria-controls: '{configForm.ariaControls}'"><label for="year-all"><f:translate key="partials_search_form_filters_year.showAll" /></label>
+                            </f:else>
+                        </f:if>
+                    </li>
+                    <f:for each="{years}" as="year">
+                        <f:if condition="{searchFilter.year}=={year}">
+                            <f:then>
+                                <li><input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][year]" value="{year}" id="year-{year}" checked="checked" additionalAttributes="{aria-controls: '{configForm.ariaControls}'"><label for="year-{year}">{year}</label></li>
+                            </f:then>
+                            <f:else>
+                                <li><input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][year]" value="{year}" id="year-{year}" additionalAttributes="{aria-controls: '{configForm.ariaControls}'"><label for="year-{year}">{year}</label></li>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </ul>
+            </fieldset>
+        </div>
+    </f:comment>
+</f:if>

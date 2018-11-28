@@ -1,0 +1,26 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+{namespace rkwAuthors=RKW\RkwAuthors\ViewHelpers}
+
+<f:section name="Default">
+
+	<header>
+		<p>
+			<f:format.crop maxCharacters="60" respectWordBoundaries="FALSE"><rkwAuthors:GetCombinedName author="{box.item}" /></f:format.crop>
+		</p>
+	</header>
+	<f:if condition="{box.boxType} == 1">
+		<div class="box-content">
+			<f:if condition="{box.item.image}" >
+				<f:then>
+					<figure><f:image src="{box.item.image}" treatIdAsReference="1"  alt="<rkwAuthors:GetCombinedName author='{box.item}'/>" width="320"  /></figure>
+				</f:then>
+			</f:if>
+		</div>
+	</f:if>
+	<footer>
+		<p class="icon-list" title="{box.item.documentType}">
+			<f:format.crop maxCharacters="{box.footerCrop}" respectWordBoundaries="FALSE"><f:translate key="partials_search_result_boxes_authors.documentType" extensionName="rkwSearch" /></f:format.crop>
+		</p>
+	</footer>
+
+</f:section>

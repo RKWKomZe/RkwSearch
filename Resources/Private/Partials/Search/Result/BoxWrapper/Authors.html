@@ -1,0 +1,17 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+{namespace rkwAuthors=RKW\RkwAuthors\ViewHelpers}
+
+<f:if condition="{box.item}" >
+	<f:if condition="{box.item.uid}">
+		<f:then>
+			<f:link.action class="box expert big {box.cssClass} {f:if(condition: '{box.item.image}', else: 'no-image')}" target="{config.linkTarget}" title="<rkwAuthors:GetCombinedName author='{author}'/>" pageUid="{config.authorsDetailPid}" extensionName="RkwAuthors" pluginName="Rkwauthorsdetail"  controller="Authors" action="show" arguments="{author:'{box.item.uid}'}" >
+				<f:render partial="Search/Result/Boxes/Authors" arguments="{_all}" />
+			</f:link.action>
+		</f:then>
+		<f:else>
+			<a href="#" class="box expert {box.cssClass} big {f:if(condition: '{box.item.image}', else: 'no-image')}" target="{config.linkTarget}" title="<rkwAuthors:GetCombinedName author='{author}'/>">
+				<f:render partial="Search/Result/Boxes/Authors" arguments="{_all}" />
+			</a>
+		</f:else>
+	</f:if>
+</f:if>

@@ -1,0 +1,1 @@
+The TCA-Helper get no unit-tests since they simply return array-entries from the TCA

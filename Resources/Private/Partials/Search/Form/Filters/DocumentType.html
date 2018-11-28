@@ -1,0 +1,36 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{documentTypes}">
+	<p>
+		<label for="document-type-select" class="hide"><f:translate key="partials_search_form_filters_documentType.label" /></label>
+		<select id="document-type-select" name="tx_rkwsearch_rkwsearch[searchFilter][documentType]" class="secondary ajax" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_documentType.ariaLabel', arguments:{0: '{documentType.name}'} )}">
+
+			<f:if condition="{searchFilter.documentType}==''">
+				<f:then>
+					<option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_documentType.showAll" /></option>
+				</f:then>
+				<f:else>
+					<option value="" tabindex="1" ><f:translate key="partials_search_form_filters_documentType.showAll" /></option>
+				</f:else>
+			</f:if>
+			<f:for each="{documentTypes}" as="documentType">
+				<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.documentType}' string2='{documentType.name}'/>">
+					<f:then>
+						<option value="{documentType.name}" selected="selected">{documentType.name}</option>
+					</f:then>
+					<f:else>
+						<option value="{documentType.name}" >{documentType.name}</option>
+					</f:else>
+				</f:if>
+			</f:for>
+		</select>
+	</p>
+</f:if>
+
+
+
+
+
+
+
+

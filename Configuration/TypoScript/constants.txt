@@ -1,0 +1,83 @@
+plugin.tx_rkwsearch {
+	view {
+		# cat=plugin.tx_rkwsearch/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:rkw_search/Resources/Private/Templates/
+		# cat=plugin.tx_rkwsearch/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:rkw_search/Resources/Private/Partials/
+		# cat=plugin.tx_rkwsearch/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:rkw_search/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_rkwsearch//a; type=string; label=Default storage PID
+		storagePid =
+	}
+
+	settings {
+
+		# cat=plugin.tx_rkwsearch; type=integer; label=TypeNum for AJAX
+		typeNumAjax = 1433770902
+
+		# cat=plugin.tx_rkwsearch; type=integer; label=TypeNum for Page Not Found
+		typeNumPageNotFound = 1444893030
+
+        import {
+
+            # cat=plugin.tx_rkwsearch; type=string; label=Comma-separated list of PIDs. All objects that are in the rootline of this pages will be imported
+            rootPages =
+            varnish {
+
+                # cat=plugin.tx_rkwsearch; type=integer; label=Comma-separated list of PIDs. The varnish cache of all pages defined here will be deleted if contents are imported (tt_content & pages-table only)
+                clearPageList = 1
+            }
+        }
+
+		search {
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=Uid of page which should be loaded when not results have been found
+			emptyResultPid =
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=Uid of page for consultant details
+			consultantsDetailPid =
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=Uid of page for internal consultant details
+			consultantsInternalDetailPid =
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=Uid of page for author details
+			authorsDetailPid =
+
+			related {
+				# cat=plugin.tx_rkwsearch; type=float; label=Tolerance for score values for keywords used for related search
+				scoreTolerance =
+
+				# cat=plugin.tx_rkwsearch; type=float; label=Items per hundred signs of text
+				itemsPerHundredSigns =
+
+				# cat=plugin.tx_rkwsearch; type=integer; label=Minimum number of items
+				minItems =
+			}
+		}
+
+		rss {
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=PageUid for RSS-Feed
+			pageUid= 1
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=TypeNum for RSS-Feed
+			typeNum= 1449588488
+
+			# cat=plugin.tx_rkwsearch; type=string; label=Name for RSS-Feed
+			feedName = RSS Feed
+
+			# cat=plugin.tx_rkwsearch; type=string; label=Page Description
+			feedDescription = Description
+
+			# cat=plugin.tx_rkwsearch; type=string; label=Relative Path to Icon of Feed
+			feedIcon = fileadmin/images/favicon-32x32.png
+
+			# cat=plugin.tx_rkwsearch; type=integer; label=Number of results
+			limit = 50
+
+		}
+
+	}
+}

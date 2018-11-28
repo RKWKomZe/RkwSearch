@@ -1,0 +1,1 @@
+We don't write PhpUnitTests for all models and repositories, but for a few examples to test the methods of the abstract class.

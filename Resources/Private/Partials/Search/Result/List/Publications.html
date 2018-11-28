@@ -1,0 +1,30 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{searchResult}">
+
+	<f:if condition="{showGrid} == 1">
+		<div class="boxes-publications" id="boxes-grid-{containerId}">
+	</f:if>
+		<f:for each="<rkwSearch:BoxContainer results=\"{searchResult}\" maxResults=\"{config.maxResults}\" type=\"publications\" hideMore=\"{config.hideMore}\" />" as="box" iteration="iterator">
+
+			<div>
+				<f:if condition="{box.boxType} == 5" >
+					<f:then>
+						<f:render partial="Search/Result/SpecialBoxes/MorePublications" arguments="{_all}" />
+					</f:then>
+					<f:else>
+						<f:if condition="{box.item}" >
+							<f:render partial="Search/Result/BoxWrapper/Publications" arguments="{_all}" />
+						</f:if>
+					</f:else>
+				</f:if>
+
+			</div>
+
+		</f:for>
+
+	<f:if condition="{showGrid} == 1">
+		</div>
+	</f:if>
+
+</f:if>

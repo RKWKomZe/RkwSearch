@@ -1,0 +1,36 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{searchResult}">
+
+	<f:if condition="{showGrid} == 1">
+		<div class="boxes-grid" id="boxes-grid-{containerId}">
+	</f:if>
+
+		<f:for each="<rkwSearch:BoxContainer results=\"{searchResult}\" hideMore=\"{config.hideMore}\" maxResults=\"{config.maxResults}\" />" as="box" iteration="iterator">
+
+			<f:if condition="{box.wrapOpen}">
+				<div class="box-wrapper">
+			</f:if>
+
+			<f:if condition="{box.boxType} == 5" >
+				<f:then>
+					<f:render partial="Search/Result/SpecialBoxes/More" arguments="{_all}" />
+				</f:then>
+				<f:else>
+					<f:if condition="{box.item}" >
+						<f:render partial="Search/Result/BoxWrapper/Default" section="Related" arguments="{_all}" />
+					</f:if>
+				</f:else>
+			</f:if>
+
+			<f:if condition="{box.wrapClose}">
+				</div>
+			</f:if>
+
+		</f:for>
+
+	<f:if condition="{showGrid} == 1">
+		</div>
+	</f:if>
+
+</f:if>

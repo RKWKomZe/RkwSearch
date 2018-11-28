@@ -1,0 +1,36 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{categories}">
+	<p>
+		<label for="document-type-select" class="hide"><f:translate key="partials_search_form_filters_category.label" /></label>
+		<select id="document-type-select" name="tx_rkwsearch_rkwsearch[searchFilter][category]" class="secondary ajax" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_category.ariaLabel', arguments:{0: '{category.name}'} )}">
+
+			<f:if condition="{searchFilter.category}==''">
+				<f:then>
+					<option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_category.showAll" /></option>
+				</f:then>
+				<f:else>
+					<option value="" tabindex="1" ><f:translate key="partials_search_form_filters_category.showAll" /></option>
+				</f:else>
+			</f:if>
+			<f:for each="{categories}" as="category">
+				<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.category}' string2='{category.title}'/>">
+					<f:then>
+						<option value="{category.title}" selected="selected">{category.title}</option>
+					</f:then>
+					<f:else>
+						<option value="{category.title}" >{category.title}</option>
+					</f:else>
+				</f:if>
+			</f:for>
+		</select>
+	</p>
+</f:if>
+
+
+
+
+
+
+
+

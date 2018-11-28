@@ -1,0 +1,8 @@
+{namespace rkw=RKW\RkwBasics\ViewHelpers}
+<f:form action="{action}" name="searchForm" id="search-form" method="post" class="ajax" noCacheHash="TRUE" additionalAttributes="{role :'search'}">
+	<f:render partial="<rkw:GetPartial type='{template}' subPath='Search/Form/Fields'/>" arguments="{_all}"  />
+	<f:form.textfield type="hidden" value="1" name="page" />
+	<f:form.textfield type="hidden" value="{config.boostPublications}" name="boostPublications" />
+
+	<input type="hidden" value="{containerId}" name="containerId" />
+</f:form>

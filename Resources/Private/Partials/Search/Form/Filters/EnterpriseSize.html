@@ -1,0 +1,36 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{enterpriseSizes}">
+	<p>
+		<label for="document-type-select" class="hide"><f:translate key="partials_search_form_filters_enterpriseSize.label" /></label>
+		<select id="document-type-select" name="tx_rkwsearch_rkwsearch[searchFilter][enterpriseSize]" class="secondary ajax" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_enterpriseSize.ariaLabel', arguments:{0: '{enterpriseSize.name}'} )}">
+
+			<f:if condition="{searchFilter.enterpriseSize}==''">
+				<f:then>
+					<option value="" selected="selected" tabindex="1"><f:translate key="partials_search_form_filters_enterpriseSize.showAll" /></option>
+				</f:then>
+				<f:else>
+					<option value="" tabindex="1" ><f:translate key="partials_search_form_filters_enterpriseSize.showAll" /></option>
+				</f:else>
+			</f:if>
+			<f:for each="{enterpriseSizes}" as="enterpriseSize">
+				<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.enterpriseSize}' string2='{enterpriseSize.name}'/>">
+					<f:then>
+						<option value="{enterpriseSize.name}" selected="selected">{enterpriseSize.name}</option>
+					</f:then>
+					<f:else>
+						<option value="{enterpriseSize.name}" >{enterpriseSize.name}</option>
+					</f:else>
+				</f:if>
+			</f:for>
+		</select>
+	</p>
+</f:if>
+
+
+
+
+
+
+
+

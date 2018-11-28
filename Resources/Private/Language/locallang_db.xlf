@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
+		<header/>
+		<body>
+
+            <!-- Flexform -->
+            <trans-unit id="flexform.search.options">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function">
+                <source>Select function</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchDefault">
+                <source>Search/Boxes: Default</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublications">
+                <source>Boxes only: Publications (Filterable By Keywords)</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublicationsSpecial">
+                <source>Search only: Publications (Not Filterable By Keywords)</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchBlog">
+                <source>Boxes only: Blog-Article</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchBestpractice">
+                <source>Boxes only: Best Practice</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchEvents">
+                <source>Search only: Events</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchHome">
+                <source>Search only: Home</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchNews">
+                <source>Search only: News</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRecent">
+                <source>Boxes only: Recent</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRecentArticle">
+                <source>Boxes only: Recent (Articles only)</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRelated">
+                <source>Boxes only: Related</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRelatedNoCache">
+                <source>Boxes only: Related (non-cached)</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublicationSeries">
+                <source>Boxes only: Publication Series</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchSeries">
+                <source>Boxes only: Series</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchConsultants">
+                <source>Search only: Consultants</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchConsultantsInternal">
+                <source>Search only: Consultants Internal</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchTest">
+                <source>Search only: Test (! NOT FOR LIVE !)</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.mostSearchedKeywords">
+                <source>Most Searched</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.pageNotFound">
+                <source>Search only: Page not found</source>
+            </trans-unit>
+
+
+            <trans-unit id="flexform.search.command">
+                <source>Command</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideFilters">
+                <source>Hide Search Filters</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideFreetextFilter">
+                <source>Hide Freetext Filter</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.limit">
+                <source>Limit</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideMore">
+                <source>Hide More-Link</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.noAutoloadMore">
+                <source>Deactivate Autoload on More-Link</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.publications.boost">
+                <source>Boost Publications</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.linkTargetSelf">
+                <source>Open Links in same Window</source>
+            </trans-unit>
+            <trans-unit id="flexform.search.categoryParentUid">
+                <source>Parent Category for Category-Filter</source>
+            </trans-unit>
+
+
+
+            <!-- Palettes  -->
+            <trans-unit id="tx_rkwsearch_results_domain_model_pages.palettes.results">
+                <source>Search</source>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_ridmapping -->
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping">
+				<source>Rid Mapping Table</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.class">
+				<source>Class</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3table">
+				<source>T3table</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.rid">
+				<source>Rid</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3id">
+				<source>T3id</source>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3pid">
+                <source>T3pid</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3lid">
+                <source>T3lid</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.index_tstamp">
+                <source>Index Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.analyse_tstamp">
+                <source>Analyse Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.tag_tstamp">
+                <source>Tag Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.import_tstamp">
+                <source>Import Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.checksum">
+				<source>Checksum</source>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.relation_checksums">
+                <source>Relation Checksums</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.message">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.debug">
+                <source>Debug</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.no_search">
+                <source>No Search</source>
+            </trans-unit>
+
+
+
+            <!-- tx_rkwsearch_domain_model_queuetaggedcontent -->
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent">
+                <source>Tagged Content</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.serialized">
+                <source>Serialized</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.rid_mapping">
+                <source>Rid Mapping</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.message">
+                <source>Message</source>
+            </trans-unit>
+
+
+
+            <!-- tx_rkwsearch_domain_model_queueanalysedkeywords -->
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords">
+                <source>Queue Analysed Keywords</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.serialized">
+                <source>Serialized</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.message">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.rid_mapping">
+                <source>Rid Mapping</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.keyword_count">
+                <source>Keyword Count</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.tstamp">
+                <source>Change Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.crdate">
+                <source>Create Timestamp</source>
+            </trans-unit>
+
+
+
+            <!-- tx_rkwsearch_domain_model_pages -->
+            <trans-unit id="tx_rkwsearch_domain_model_pages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_timestamp">
+                <source>Time Of Latest Action</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_result">
+                <source>Result Of Analysis</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status">
+                <source>Status Of Indexing</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.zero">
+                <source>Step 1 of 5: Waiting To Be Processed</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.one">
+                <source>Step 2 of 5: Tagging Finished</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.two">
+                <source>Step 3 of 5: Analysis Finished</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.three">
+                <source>Step 4 of 5: Indexing in progress</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.four">
+                <source>Step 5 of 5: Successfully Indexed</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.error">
+                <source>Error while trying to index</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type">
+                <source>Document Type</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type.I.text">
+                <source>Normal Text</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type.I.blog">
+                <source>Blog</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_no_search">
+                <source>Include In Search</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_no_search.I.deactivated">
+                <source>Deactivated</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_pubdate">
+                <source>Date of publication</source>
+            </trans-unit>
+
+
+
+        </body>
+	</file>
+</xliff>

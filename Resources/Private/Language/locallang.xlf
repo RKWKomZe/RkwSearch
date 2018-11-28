@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
+		<header/>
+		<body>
+
+
+            <!-- tx_rkwsearch_domain_model_ridmapping -->
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping">
+				<source>Rid Mapping Table</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.class">
+				<source>Class</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.rid">
+				<source>Rid</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3table">
+				<source>T3table</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3id">
+				<source>T3id</source>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3pid">
+                <source>T3pid</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.t3lid">
+                <source>T3lid</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.checksum">
+				<source>Checksum</source>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.relation_checksums">
+                <source>Relation Checksums</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.index_tstamp">
+                <source>Index Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.analyse_tstamp">
+                <source>Analyse Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.tag_tstamp">
+                <source>Tag Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.message">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.debug">
+                <source>Debug</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping.no_search">
+                <source>No Search</source>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_queuetaggedcontent -->
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent">
+                <source>Tagged Content</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.serialized">
+                <source>Serialized</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.rid_mapping">
+                <source>Rid Mapping</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent.message">
+                <source>Message</source>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_queueanalysedkeywords -->
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords">
+                <source>Queue Analysed Keywords</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.serialized">
+                <source>Serialized</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.rid_mapping">
+                <source>Rid Mapping</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.message">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.keyword_count">
+                <source>Keyword Count</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.tstamp">
+                <source>Change Timestamp</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords.crdate">
+                <source>Create Timestamp</source>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_pages -->
+            <trans-unit id="tx_rkwsearch_domain_model_pages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_timestamp">
+                <source>Time Of Latest Action</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_result">
+                <source>Result Of Indexing</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status">
+                <source>Status Of Indexing</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type">
+                <source>Document Type</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_no_search">
+                <source>Include In Search</source>
+            </trans-unit>
+
+
+
+            <!-- tx_rkwsearch_domain_model_search -->
+            <trans-unit id="tx_rkwsearch_domain_model_search">
+                <source>Search Form</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_search.period">
+                <source>Period</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_search.document_type">
+                <source>Document Type</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_search.department">
+                <source>Department</source>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_search.search_string">
+                <source>Search String</source>
+            </trans-unit>
+
+
+
+            <!-- SearchController -->
+            <trans-unit id="tx_rkwsearch.SearchController.error.invalid_query_1434024949">
+                <source>Error while searching.</source>
+            </trans-unit>
+
+
+
+            <!-- Backend-Messages from e.g. Hooks -->
+            <trans-unit id="tx_rkwsearch.backend.error.header">
+				<source>Fatal Error</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.error.fatal_error_1399293930">
+				<source>An error occurred when trying to communicate with the OrientDB database. Please contact your system admin. Error: %s</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.header">
+				<source>Notice</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.relation_error_1401886050">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Please make sure, that all related records are submitted into the search database by saving them again and then save this record again. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.workspace_error_1401889803">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Some of the records that are related to this record are not yet published. They have been ignored. Please publish them to the live environment and then save this record again to submit all set relations to the search database. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.warning.little_problem_1399294227">
+				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but could not be submitted into the search database. If you just edited or created a content-element on a page, try opening the page properties of the current page and save them again. This should transfer the whole page including it's contents to OrientDB. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
+			</trans-unit>
+            <trans-unit id="tx_rkwsearch.backend.warning.not_in_rootline_1495445181">
+                <source>Dataset has been ignored by OrientDB database, because it is not within the defined rootline.</source>
+            </trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.message.header">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="tx_rkwsearch.backend.message.successfully_saved_1399294437">
+				<source>Your changes have been successfully submitted to OrientDB database and will be displayed in the search results soon.</source>
+			</trans-unit>
+
+
+            <!-- Templates/Search/PageNotFound.html -->
+            <trans-unit id="templates_search_pageNotFound.noAlternativeResults">
+                <source>Sorry, but there are no alternative results.</source>
+            </trans-unit>
+
+
+            <!-- Templates/Search/<example.html -->
+            <trans-unit id="templates_search_example.noResults">
+                <source>Sorry, but there are no result for your criteria. Try other options.</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Fields/Default.html -->
+            <trans-unit id="partials_search_form_fields_default.searchfieldPlaceholder">
+                <source>Please enter search string...</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_fields_default.searchfieldLabel">
+                <source>Search</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/Department.html -->
+            <trans-unit id="partials_search_form_filters_department.label">
+                <source>Topic:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_department.labelLong">
+                <source>Filter results by topic:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_department.ariaLabelAll">
+                <source>Show all topics</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_department.ariaLabel">
+                <source>Filter by topic: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_department.showAll">
+                <source>All</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/Sector.html -->
+            <trans-unit id="partials_search_form_filters_sector.label">
+                <source>Sector:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_sector.labelLong">
+                <source>Filter results by sector:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_sector.ariaLabelAll">
+                <source>Show all sectors</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_sector.ariaLabel">
+                <source>Filter by sector: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_sector.showAll">
+                <source>All</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/EnterpriseSize.html -->
+            <trans-unit id="partials_search_form_filters_enterpriseSize.label">
+                <source>Enterprise size:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_enterpriseSize.labelLong">
+                <source>Filter results by enterprise size:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_enterpriseSize.ariaLabelAll">
+                <source>Show all enterprise sizes</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_enterpriseSize.ariaLabel">
+                <source>Filter by enterprise size: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_enterpriseSize.showAll">
+                <source>All</source>
+            </trans-unit>            
+
+            
+            <!-- Partials/Search/Form/Filters/category.html -->
+            <trans-unit id="partials_search_form_filters_category.label">
+                <source>Category:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_category.labelLong">
+                <source>Filter results by category:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_category.ariaLabelAll">
+                <source>Show all category</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_category.ariaLabel">
+                <source>Filter by category: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_category.showAll">
+                <source>All</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/DocumentType.html -->
+            <trans-unit id="partials_search_form_filters_documentType.label">
+                <source>Type:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_documentType.labelLong">
+                <source>Filter results by type:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_documentType.ariaLabelAll">
+                <source>Show all types</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_documentType.ariaLabel">
+                <source>Filter by type: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_documentType.showAll">
+                <source>All Types</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/ConsultantService.html -->
+            <trans-unit id="partials_search_form_filters_consultantService.label">
+                <source>Type:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_cosultantService.labelLong">
+                <source>Filter results by type:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_cosultantService.ariaLabelAll">
+                <source>Show all types</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_cosultantService.ariaLabel">
+                <source>Filter by type: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_cosultantService.showAll">
+                <source>All Types</source>
+            </trans-unit>
+
+            <!-- Partials/Search/Form/Filters/ConsultantLocation.html -->
+            <trans-unit id="partials_search_form_filters_consultantLocation.searchfieldPlaceholder">
+                <source>Enter ZIP or Address</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_consultantLocation.ariaLabel">
+                <source>Filter by ZIP or Address</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_consultantLocation.searchButton">
+                <source>Search</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/Project.html -->
+            <trans-unit id="partials_search_form_filters_project.label">
+                <source>Project:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_project.labelLong">
+                <source>Filter results by project:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_project.ariaLabelAll">
+                <source>Show all projects</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_project.ariaLabel">
+                <source>Filter by project: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_project.showAll">
+                <source>All Projects</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Form/Filters/Year.html -->
+            <trans-unit id="partials_search_form_filters_year.label">
+                <source>Year:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_year.labelLong">
+                <source>Filter results by year:</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_year.ariaLabelAll">
+                <source>Show all years</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_year.ariaLabel">
+                <source>Filter by year: %s</source>
+            </trans-unit>
+            <trans-unit id="partials_search_form_filters_year.showAll">
+                <source>All years</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Result/Boxes/Authors.html -->
+            <trans-unit id="partials_search_result_boxes_authors.documentType">
+                <source>Author</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Result/Boxes/Default/Publications.html -->
+            <trans-unit id="partials_search_result_boxes_default_publications.labelChapter">
+                <source>Chapter</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_boxes_default_publications.labelFrom">
+                <source>From</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/Result/Boxes/Consultants.html -->
+            <trans-unit id="partials_search_result_boxes_consultant.labelKilometers">
+                <source>km</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_boxes_consultant.labelTelephone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_boxes_consultant.labelWebsite">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_boxes_consultant.labelConsultant">
+                <source>Consultant</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_boxes_consultant.labelConsultantRkw">
+                <source>RKW Network</source>
+            </trans-unit>
+
+
+
+            <!-- Partials/Search/Result/SpecialBoxes/More.html -->
+            <trans-unit id="partials_search_result_specialBoxes_more.moreLabel">
+                <source>Load more</source>
+            </trans-unit>
+            <trans-unit id="partials_search_result_specialBoxes_more.moreLabelBefore">
+                <source>Interesting?</source>
+            </trans-unit>
+
+
+            <!-- Partials/Search/EmptyResult.html -->
+            <trans-unit id="partials_search_emptyResult.noResult">
+                <source>Sorry, but there are currently no results.</source>
+            </trans-unit>
+
+
+
+        </body>
+	</file>
+</xliff>

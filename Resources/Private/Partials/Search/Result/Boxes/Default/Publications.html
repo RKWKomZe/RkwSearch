@@ -1,0 +1,49 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:section name="Default">
+
+	<header>
+		<p>
+			<f:format.crop maxCharacters="{box.headerCrop}" respectWordBoundaries="FALSE">{box.item.title}</f:format.crop>
+		</p>
+	</header>
+	<f:if condition="{box.boxType} == 1">
+		<div class="box-content">
+			<f:render section="Preview" arguments="{_all}" />
+		</div>
+	</f:if>
+
+	<footer>
+		<p class="icon-book" title="{box.item.documentType}">
+			<f:format.crop maxCharacters="{box.footerCrop}" respectWordBoundaries="FALSE">{box.item.documentType}</f:format.crop>
+		</p>
+	</footer>
+
+</f:section>
+
+
+<!-- Preview  -->
+<f:section name="Preview">
+
+	<f:if condition="{box.item.previewImage}" >
+		<f:then>
+			<figure><f:cObject typoscriptObjectPath="plugin.tx_rkwsearch.libs.responsiveImageThumbnail" data="{box.item.previewImage}"/></figure>
+		</f:then>
+		<f:else>
+			<div class="wysiwyg">
+				<p>
+					<f:format.crop maxCharacters="{box.contentCrop}" respectWordBoundaries="TRUE">{box.item.abstract}</f:format.crop>
+				</p>
+			</div>
+		</f:else>
+	</f:if>
+
+	<f:if condition="{box.item.subtitle}" >
+		<f:then>
+			<p class="event-date" title="<f:format.htmlspecialchars>{box.item.subtitle}</f:format.htmlspecialchars>">
+				<f:format.crop maxCharacters="{box.flagCrop}" respectWordBoundaries="TRUE">{box.item.subtitle}</f:format.crop>
+			</p>
+		</f:then>
+	</f:if>
+
+</f:section>

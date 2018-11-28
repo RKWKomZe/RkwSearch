@@ -1,0 +1,12 @@
+<div class="searchbox" <f:if condition='{configForm.hideFreetextFilter} == 1'>style="display:none;"</f:if>>
+	<label for="searchbox-search"><f:translate key="partials_search_form_fields_default.searchfieldLabel" /></label>
+	<f:form.textfield type="search" id="searchbox-search" class="search" placeholder="<f:translate key='partials_search_form_fields_default.searchfieldPlaceholder' />" name="searchFilter[searchString]" value="{searchFilter.searchString}" additionalAttributes="{aria-controls: '{configForm.ariaControls}', autocomplete:'off', data-special-keywords:'{configForm.specialKeywords}', data-max-chars:'{configForm.delayLettersForAjax}', data-delay:'{configForm.delayTimeForAjax}', tabindex:'1'}"   />
+</div>
+
+
+<div class="filter search-filter">
+	<f:if condition="{action} == 'consultantsInternal'">
+		<!-- <f:render partial="Search/Form/Filters/ConsultantService" arguments="{_all}"  /> -->
+	</f:if>
+	<f:render partial="Search/Form/Filters/ConsultantLocation" arguments="{_all}"  />
+</div>

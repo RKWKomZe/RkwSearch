@@ -1,0 +1,79 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+{namespace rkwAuthors=RKW\RkwAuthors\ViewHelpers}
+
+<f:section name="Default">
+	<f:if condition="{box.item}" >
+		<f:if condition="<f:uri.page pageUid='{box.item.uid}' />">
+			<f:then>
+				<f:link.page pageUid="{box.item.uid}" class="box {box.cssClass} {box.cssClassSize}" target="{config.linkTarget}" title="{box.item.titleParent}" >
+					<f:render section="Inner" arguments="{_all}" />
+				</f:link.page>
+			</f:then>
+			<f:else>
+				<a href="#" class="box {box.cssClass} {box.cssClassSize}" target="{config.linkTarget}" title="{box.item.titleParent}" >
+					<f:render section="Inner" arguments="{_all}" />
+				</a>
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>
+
+
+<!-- Related with nofollow -->
+<f:section name="Related">
+	<f:if condition="{box.item}" >
+		<f:if condition="<f:uri.page pageUid='{box.item.uid}' />">
+			<f:then>
+				<f:link.page pageUid="{box.item.uid}" class="box {box.cssClass} {box.cssClassSize}" target="{config.linkTarget}" title="{box.item.titleParent}" rel="nofollow">
+					<f:render section="Inner" arguments="{_all}" />
+				</f:link.page>
+			</f:then>
+			<f:else>
+				<a href="#" class="box {box.cssClass} {box.cssClassSize}" target="{config.linkTarget}" title="{box.item.titleParent}" rel="nofollow">
+					<f:render section="Inner" arguments="{_all}" />
+				</a>
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>
+
+
+<!-- Authors -->
+<f:section name="Authors">
+	<f:if condition="{box.item}" >
+		<f:if condition="{box.item.uid}">
+			<f:then>
+				<f:link.action class="box expert big {box.cssClass} {f:if(condition: '{box.item.image}', else: 'no-image')}" target="{config.linkTarget}" title="<rkwAuthors:GetCombinedName author='{box.item}'/>" pageUid="{config.authorsDetailPid}" extensionName="RkwAuthors" pluginName="Rkwauthorsdetail"  controller="Authors" action="show" arguments="{author:'{box.item.uid}'}" >
+					<f:render partial="Search/Result/Boxes/Default/Authors" arguments="{_all}" section="Default"/>
+				</f:link.action>
+
+			</f:then>
+			<f:else>
+				<a href="#" class="box expert {box.cssClass} big {f:if(condition: '{box.item.image}', else: 'no-image')}" target="{config.linkTarget}" title="<rkwAuthors:GetCombinedName author='{box.item}'/>">
+					<f:render partial="Search/Result/Boxes/Default/Authors" arguments="{_all}" section="Default" />
+				</a>
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>
+
+<!-- Inner part -->
+<f:section name="Inner">
+	<f:if condition="{box.item.class} == 'DocumentPages'">
+		<f:then>
+			<f:if condition="{box.item.boxTemplateName}">
+				<f:then>
+					<f:render partial="<rkwSearch:GetPartial type='{box.item.boxTemplateName}' subPath='Search/Result/Boxes/Default'/>" section="Default" arguments="{_all}" />
+				</f:then>
+				<f:else>
+					<f:render partial="<rkwSearch:GetPartial type='{box.item.class}' subPath='Search/Result/Boxes/Default'/>" section="Default" arguments="{_all}" />
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:render partial="<rkwSearch:GetPartial type='{box.item.class}' subPath='Search/Result/Boxes/Default'/>" section="Default" arguments="{_all}" />
+		</f:else>
+	</f:if>
+
+</f:section>
+

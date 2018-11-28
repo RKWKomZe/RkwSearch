@@ -1,0 +1,16 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{box.item}" >
+	<f:if condition="<f:uri.page pageUid='{box.item.uid}' />">
+		<f:then>
+			<f:link.page pageUid="{box.item.uid}" class="box event big {box.cssClass}" target="{config.linkTarget}" title="{box.item.title}" >
+				<f:render partial="Search/Result/Boxes/Recent" arguments="{_all}" />
+			</f:link.page>
+		</f:then>
+		<f:else>
+			<a href="#"  class="box event {box.cssClass} big" target="{config.linkTarget}" title="{box.item.title}">
+				<f:render partial="Search/Result/Boxes/Recent" arguments="{_all}" />
+			</a>
+		</f:else>
+	</f:if>
+</f:if>

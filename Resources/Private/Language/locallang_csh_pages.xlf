@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-19T13:47:21Z" product-name="rkw_search">
+		<header/>
+		<body>
+			<trans-unit id="tx_rkw_search_index_status.description">
+				<source>txRkwSearchIndexStatus</source>
+			</trans-unit>
+			<trans-unit id="tx_rkw_search_index_result.description">
+				<source>txRkwSearchIndexResult</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

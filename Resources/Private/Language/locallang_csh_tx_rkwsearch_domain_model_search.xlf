@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-06-08T13:06:08Z" product-name="rkw_search">
+        <header/>
+        <body>
+            <trans-unit id="period.description">
+                <source>period</source>
+            </trans-unit>
+            <trans-unit id="search_string.description">
+                <source>searchString</source>
+            </trans-unit>
+            <trans-unit id="document_type.description">
+                <source>documentType</source>
+            </trans-unit>
+            <trans-unit id="department.description">
+                <source>department</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

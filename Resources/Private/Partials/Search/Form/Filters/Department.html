@@ -1,0 +1,32 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{departments}">
+	<div>
+		<fieldset>
+			<legend class="hide"><f:translate key="partials_search_form_filters_department.labelLong" /></legend>
+			<ul>
+				<li class="description" role="presentation"><f:translate key="partials_search_form_filters_department.label" /></li>
+				<li>
+					<f:if condition="{searchFilter.department}==''">
+						<f:then>
+							<input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][department]" value="" checked="checked" id="department-all" tabindex="1" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_department.ariaLabelAll')}" ><label for="department-all"><f:translate key="partials_search_form_filters_department.showAll" /></label>
+						</f:then>
+						<f:else>
+							<input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][department]" value="" id="department-all" tabindex="1" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_department.ariaLabelAll')}" ><label for="department-all"><f:translate key="partials_search_form_filters_department.showAll" /></label>
+						</f:else>
+					</f:if>
+				</li>
+				<f:for each="{departments}" as="department">
+					<f:if condition="<rkwSearch:lowerCaseCompare string1='{searchFilter.department}' string2='{department.name}'/>">
+						<f:then>
+							<li><input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][department]" value="{department.name}" id="department-{department.uid}" checked="checked" tabindex="1" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_department.ariaLabel', arguments:{0: '{department.name}'} )}"><label for="department-{department.uid}" class="{department.cssClass}">{department.name}</label></li>
+						</f:then>
+						<f:else>
+							<li><input type="radio" name="tx_rkwsearch_rkwsearch[searchFilter][department]" value="{department.name}" id="department-{department.uid}" tabindex="1" aria-controls="{configForm.ariaControls}" aria-label="{f:translate(key: 'partials_search_form_filters_department.ariaLabel', arguments:{0: '{department.name}'} )}"><label for="department-{department.uid}" class="{department.cssClass}">{department.name}</label></li>
+						</f:else>
+					</f:if>
+				</f:for>
+			</ul>
+		</fieldset>
+	</div>
+</f:if>

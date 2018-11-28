@@ -1,0 +1,26 @@
+{namespace rkwSearch=RKW\RkwSearch\ViewHelpers}
+
+<f:if condition="{searchFilterLinkParams}">
+	<f:if condition="{config.noAutoloadMore} == 1">
+		<f:then>
+			<f:link.action action="{action}" controller="Search" extensionName="rkwSearch" pluginName="rkwSearch" additionalParams="{searchFilterLinkParams}" id="more-link-{page}" target="{config.linkTarget}" rel="nofollow" class="box help {box.cssClass} {box.cssClassSize}" title="<f:translate key='partials_search_result_specialBoxes_more.moreLabel' extensionName='rkwSearch' />">
+				<header>
+					<p>
+						<f:translate key="partials_search_result_specialBoxes_more.moreLabelBefore" extensionName="rkwSearch"  /><br/>
+						<strong><f:translate key="partials_search_result_specialBoxes_more.moreLabel" extensionName="rkwSearch" /></strong>
+					</p>
+				</header>
+			</f:link.action>
+		</f:then>
+		<f:else>
+			<f:link.action action="{action}" controller="Search" extensionName="rkwSearch" pluginName="rkwSearch" additionalParams="{searchFilterLinkParams}" id="more-link-{page}" target="{config.linkTarget}" rel="nofollow" class="box help {box.cssClass} {box.cssClassSize} autoload" title="<f:translate key='partials_search_result_specialBoxes_more.moreLabel' extensionName='rkwSearch' />">
+				<header>
+					<p>
+						<f:translate key="partials_search_result_specialBoxes_more.moreLabelBefore" extensionName="rkwSearch" /><br/>
+						<strong><f:translate key="partials_search_result_specialBoxes_more.moreLabel" extensionName="rkwSearch" /></strong>
+					</p>
+				</header>
+			</f:link.action>
+		</f:else>
+	</f:if>
+</f:if>

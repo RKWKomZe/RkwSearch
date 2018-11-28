@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
+		<header/>
+		<body>
+
+            <!-- Flexforms -->
+            <trans-unit id="flexform.search.options">
+                <source>Options</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function">
+                <source>Select function</source>
+                <target>Funktion wählen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchDefault">
+                <source>Search/Boxes: Default</source>
+                <target>Suche/Boxen: Alles (Standard)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublications">
+                <source>Boxes only: Publications (Filterable By Keywords)</source>
+                <target>Nur für Boxen: Publikationen (Filterbar nach Schlagwörtern)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublicationsSpecial">
+                <source>Search only: Publications (Not Filterable By Keywords)</source>
+                <target>Nur für Suche: Nur Publikationen (NICHT filterbar nach Schlagwörtern)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchBlog">
+                <source>Boxes only: Blog-Article</source>
+                <target>Nur für Boxen: Blog-Artikel</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchBestpractice">
+                <source>Boxes only: Best Practice</source>
+                <target>Nur für Boxen: Praxisbeispiele</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchEvents">
+                <source>Search only: Events</source>
+                <target>Nur für Suche: Events</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchHome">
+                <source>Search only: Home</source>
+                <target>Nur für Suche: Home</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchNews">
+                <source>Search only: News</source>
+                <target>Nur für Suche: Neues aus dem RKW</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRecent">
+                <source>Boxes only: Recent</source>
+                <target>Nur für Boxen: Neuste Beiträge</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRecentArticle">
+                <source>Boxes only: Recent (Articles only)</source>
+                <target>Nur für Boxen: Neuste Beiträge (nur Artikel)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRelated">
+                <source>Boxes only: Related</source>
+                <target>Nur für Boxen: Ähnliche Artikel</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchRelatedNoCache">
+                <source>Boxes only: Related NonCached</source>
+                <target>Nur für Boxen: Ähnliche Artikel (nicht gecacht)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchPublicationSeries">
+                <source>Boxes only: Publication Series</source>
+                <target>Nur für Boxen: Publikationsreihen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchSeries">
+                <source>Boxes only: Series</source>
+                <target>Nur für Boxen: Reihen/Serien</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchConsultants">
+                <source>Search only: Consultants</source>
+                <target>Nur für Suche: Berater</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchConsultantsInternal">
+                <source>Search only: Consultants Internal</source>
+                <target>Nur für Suche: Berater RKW Netzwerk</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.searchTest">
+                <source>Search: Test (! NOT FOR LIVE !)</source>
+                <target>Nur für Suche: Test (! NICHT FÜR LIVE-BETRIEB !)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.mostSearchedKeywords">
+                <source>Most Searched</source>
+                <target>Meistgesuchte Schlagwörter</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.function.I.pageNotFound">
+                <source>Search only: Page not found</source>
+                <target>Nur Suche: Seite nicht gefunden</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="flexform.search.command">
+                <source>Command</source>
+                <target>Such-Befehl</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideFilters">
+                <source>Hide Search Filters</source>
+                <target>Suchfilter verbergen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideFreetextFilter">
+                <source>Hide Freetext Filter</source>
+                <target>Freitext-Suche verbergen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.limit">
+                <source>Limit</source>
+                <target>Maximale Anzahl Ergebnisse</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.hideMore">
+                <source>Hide More-Link</source>
+                <target>Mehr-Link verbergen</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.noAutoloadMore">
+                <source>Deactivate Autoload on More-Link</source>
+                <target>Deaktiviere Auto-Load für Mehr-Link beim Erreichen des Seitenfußes</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.publications.boost">
+                <source>Boost Publications</source>
+                <target>Publikationen aufwerten (werden dann zuerst ausgegeben)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.linkTargetSelf">
+                <source>Open Links in same Window</source>
+                <target>Links in gleichem Fenster öffnen (Standard: neues Fenster)</target>
+            </trans-unit>
+            <trans-unit id="flexform.search.categoryParentUid">
+                <source>Parent Category for Category-Filter</source>
+                <target>Eltern-Kategorie für Kategorien-Filter</target>
+            </trans-unit>
+
+
+
+            <!-- Palettes -->
+            <trans-unit id="tx_rkwsearch_results_domain_model_pages.palettes.results">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_ridmapping -->
+            <trans-unit id="tx_rkwsearch_domain_model_ridmapping">
+                <source>Rid Mapping Table</source>
+                <target>Rid Mapping Table</target>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_queuetaggedcontent -->
+            <trans-unit id="tx_rkwsearch_domain_model_queuetaggedcontent">
+                <source>Tagged Content</source>
+                <target>Tagged Content</target>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_queueanalysedkeywords-->
+            <trans-unit id="tx_rkwsearch_domain_model_queueanalysedkeywords">
+                <source>Queue Analysed Keywords</source>
+                <target>Queue Analysed Keywords</target>
+            </trans-unit>
+
+
+            <!-- tx_rkwsearch_domain_model_pages -->
+            <trans-unit id="tx_rkwsearch_domain_model_pages" >
+                <source>Pages</source>
+                <target>Seiten</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_timestamp" approved="yes">
+                <source>Time Of Latest Action</source>
+                <target>Letzte Statusänderung</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_result" approved="yes">
+                <source>Result Of Analysis</source>
+                <target>Ergebnis der Analyse (TOP 100)</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status" approved="yes">
+                <source>Status Of Indexing</source>
+                <target>Status der Indexierung</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.zero" approved="yes">
+                <source>Step 1 of 5: Waiting To Be Processed</source>
+                <target>Schritt 1 von 5: Warte auf Abarbeitung</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.one" approved="yes">
+                <source>Step 2 of 5: Tagging Finished</source>
+                <target>Schritt 2 von 5: Tagging abgeschlossen</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.two" approved="yes">
+                <source>Step 3 of 5: Analysis Finished</source>
+                <target>Schritt 3 von 5: Auswertung abgeschlossen</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.three" approved="yes">
+                <source>Step 4 of 5: Indexing in progress</source>
+                <target>Schritt 4 von 5: Indexierung läuft</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.four" approved="yes">
+                <source>Step 5 of 5: Successfully Indexed</source>
+                <target>Schritt 5 von 5: Indexierung erfolgreich</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_index_status.I.error" approved="yes">
+                <source>Error while trying to index</source>
+                <target>Beim Indexieren ist ein Fehler aufgetreten</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type" approved="yes">
+                <source>Document Type</source>
+                <target>Dokumenten-Typ</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type.I.text" approved="yes">
+                <source>Normal Text</source>
+                <target>Normaler Text</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_document_type.I.blog" approved="yes">
+                <source>Blog</source>
+                <target>Blog-Beitrag</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_no_search" approved="yes">
+                <source>Include In Search</source>
+                <target>In Suche aufnehmen</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_no_search.I.deactivated" approved="yes">
+                <source>Deactivated</source>
+                <target>Deaktiviert</target>
+            </trans-unit>
+            <trans-unit id="tx_rkwsearch_domain_model_pages.tx_rkwsearch_pubdate">
+                <source>Date of publication</source>
+                <target>Datum der Veröffentlichung (relevant für Suche)</target>
+            </trans-unit>
+        </body>
+	</file>
+</xliff>

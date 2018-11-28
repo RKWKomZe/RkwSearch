@@ -1,0 +1,184 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.options</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchDefault</numIndex>
+										<numIndex index="1">Search->search;Search->recent;</numIndex>
+									</numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchEvents</numIndex>
+                                        <numIndex index="1">Search->events;Search->search</numIndex>
+                                    </numIndex>
+                                    <!--
+                                    @toDo: Finally delete when tested
+									<numIndex index="12">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchConsultants</numIndex>
+										<numIndex index="1">Search->consultants;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="13">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchConsultantsInternal</numIndex>
+										<numIndex index="1">Search->consultantsInternal;Search->search</numIndex>
+									</numIndex>
+									-->
+									<numIndex index="4">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchPublicationsSpecial</numIndex>
+										<numIndex index="1">Search->publicationsSpecial;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchPublications</numIndex>
+                                        <numIndex index="1">Search->publications;Search->search</numIndex>
+                                    </numIndex>
+									<numIndex index="6">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchRecent</numIndex>
+										<numIndex index="1">Search->recent;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="15">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchRecentArticle</numIndex>
+										<numIndex index="1">Search->recentArticle;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="9">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchBlog</numIndex>
+										<numIndex index="1">Search->blog;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="14">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchBestpractice</numIndex>
+										<numIndex index="1">Search->example;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="8">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchRelated</numIndex>
+										<numIndex index="1">Search->related;Search->search;Search->recent;</numIndex>
+									</numIndex>
+									<numIndex index="17">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchRelatedNoCache</numIndex>
+										<numIndex index="1">Search->relatedNoCache;Search->search;Search->recent;</numIndex>
+									</numIndex>
+									<numIndex index="10">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchPublicationSeries</numIndex>
+										<numIndex index="1">Search->publicationsSeries;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="11">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchSeries</numIndex>
+										<numIndex index="1">Search->series;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="5">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.mostSearchedKeywords</numIndex>
+										<numIndex index="1">Search->mostSearchedKeywords;Search->search</numIndex>
+									</numIndex>
+									<numIndex index="7">
+                                        <numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.searchTest</numIndex>
+                                        <numIndex index="1">Search->test;Search->search</numIndex>
+                                    </numIndex>
+									<numIndex index="16">
+										<numIndex index="0">LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.function.I.pageNotFound</numIndex>
+										<numIndex index="1">Search->pageNotFound;Search->search</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+                    <settings.search.command>
+                        <TCEforms>
+                            <label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.command</label>
+                            <config>
+                                <type>input</type>
+                                <size>40</size>
+                                <eval>trim</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.search.command>
+					<settings.search.hideFreetextFilter>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.hideFreetextFilter</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.hideFreetextFilter>
+					<settings.search.hideFilters>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.hideFilters</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.hideFilters>
+					<settings.search.limit>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.limit</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</settings.search.limit>
+					<settings.search.hideMore>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.hideMore</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.hideMore>
+					<settings.search.noAutoloadMore>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.noAutoloadMore</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.noAutoloadMore>
+					<settings.search.publications.boost>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.publications.boost</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.publications.boost>
+					<settings.search.linkTargetSelf>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.linkTargetSelf</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.search.linkTargetSelf>
+					<settings.search.categoryParentUid>
+						<TCEforms>
+							<label>LLL:EXT:rkw_search/Resources/Private/Language/locallang_db.xlf:flexform.search.categoryParentUid</label>
+							<config>
+								<type>select</type>
+								<autoSizeMax>50</autoSizeMax>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.sorting ASC</foreign_table_where>
+								<maxitems>1</maxitems>
+								<minItems>0</minItems>
+								<renderMode>tree</renderMode>
+								<treeConfig>
+									<appearance>
+										<expandAll>1</expandAll>
+										<showHeader>1</showHeader>
+									</appearance>
+									<parentField>parent</parentField>
+								</treeConfig>
+							</config>
+						</TCEforms>
+					</settings.search.categoryParentUid>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>
