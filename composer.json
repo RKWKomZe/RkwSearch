@@ -19,7 +19,7 @@
     "require": {
         "typo3/cms-core": "^7.6.0 || ^8.7.0",
         "doctrine/orientdb-odm": "dev-master@dev",
-        "orientdb-php/orientdb-php": "0.4.9",
+        "orientdb-php/orientdb-php": "dev-master@dev",
         "rkw/rkw-basics": "~7.6.12",
         "rkw/rkw-authors": "~7.6.10",
         "rkw/rkw-projects": "~7.6.10",
