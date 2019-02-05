@@ -30,17 +30,13 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '7.6.6',
 	'constraints' => array(
 		'depends' => array(
-			'extbase' => '6.2.0-7.6.99',
-			'fluid' => '6.2.0-7.6.99',
-			'typo3' => '6.2.0-7.6.99',
-            'rkw_basics' => '7.6.10-7.6.99',
-            'rkw_authors' => '7.6.10-7.6.99',
-            'rkw_projects' => '7.6.10-7.6.99',
-			'rkw_geolocation' => '7.6.10-7.6.99',
-			/** @toDo: Finally delete when tested
-            'rkw_consultant' => '1.0.0-2.9.99',
-             */
-
+			'extbase' => '7.6.0-7.6.99',
+			'fluid' => '7.6.0-7.6.99',
+			'typo3' => '7.6.0-7.6.99',
+            'rkw_basics' => '7.6.10-8.7.99',
+            'rkw_authors' => '7.6.10-8.7.99',
+            'rkw_projects' => '7.6.10-8.7.99',
+			'rkw_geolocation' => '7.6.10-8.7.99',
 		),
 		'conflicts' => array(
 		),
