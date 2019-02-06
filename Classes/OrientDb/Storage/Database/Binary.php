@@ -1,6 +1,6 @@
 <?php
 namespace RKW\RkwSearch\OrientDb\Storage\Database;
-require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
+//require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -23,7 +23,7 @@ require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_se
  * @copyright Steffen Kroggel, RKW Kompetenzzentrum
  * @licence http://www.gnu.org/copyleft/gpl.htm
  * @uses \Doctrine\OrientDB\Binding
- * @uses \Doctrine\OrientDB
+ * @uses \OrientDB
  */
 class Binary extends DatabaseAbstract {
 
