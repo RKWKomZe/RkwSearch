@@ -1,6 +1,6 @@
 <?php
 namespace RKW\RkwSearch\Tests\OrientDb\Collection;
-require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
+// require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
 
 /**
  * Class DocumentBinaryTest

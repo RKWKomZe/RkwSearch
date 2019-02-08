@@ -4,8 +4,8 @@ namespace RKW\RkwSearch\OrientDb\Cache;
 /**
  * @toDo: We need this dirty hack here since otherwise the cache crashes with "__PHP_Incomplete_Class" for OrientDbRecord
  */
-require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDBRecord.php');
-require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
+// require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDBRecord.php');
+// require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rkw_search') . 'Classes/Libs/OrientDB-PHP/OrientDB/OrientDB.php');
 
 /*
  * This file is part of the TYPO3 CMS project.
