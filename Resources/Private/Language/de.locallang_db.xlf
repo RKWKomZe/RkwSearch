@@ -71,11 +71,11 @@
             </trans-unit>
             <trans-unit id="flexform.search.function.I.searchConsultants">
                 <source>Search only: Consultants</source>
-                <target>Nur für Suche: Berater</target>
+                <target>Nur für Suche: Beratende</target>
             </trans-unit>
             <trans-unit id="flexform.search.function.I.searchConsultantsInternal">
                 <source>Search only: Consultants Internal</source>
-                <target>Nur für Suche: Berater RKW Netzwerk</target>
+                <target>Nur für Suche: Beratende RKW Netzwerk</target>
             </trans-unit>
             <trans-unit id="flexform.search.function.I.searchTest">
                 <source>Search: Test (! NOT FOR LIVE !)</source>
