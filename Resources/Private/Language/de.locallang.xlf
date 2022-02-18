@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
-		<header/>
+	<file datatype="plaintext" target-language="de-DE" source-language="en" original="messages" date="2014-04-03T15:56:40Z" product-name="rkw_search">
+		<header>
+      <phase-group>
+        <phase contact-email="berberich@rkw.de" process-name="approval" tool-id="lokalize-22.03.70" phase-name="approval-1" contact-name="Melanie" date="2022-02-18"/>
+      </phase-group>
+      <tool tool-version="22.03.70" tool-name="Lokalize" tool-id="lokalize-22.03.70"/>
+    </header>
 		<body>
 
 
@@ -18,25 +23,25 @@
 				<source>Fatal Error</source>
 				<target>Fataler Fehler</target>
 			</trans-unit>
-			<trans-unit id="tx_rkwsearch.backend.error.fatal_error_1399293930">
+			<trans-unit approved="no" id="tx_rkwsearch.backend.error.fatal_error_1399293930">
 				<source>An error occurred when trying to communicate with the OrientDB database. Please contact your system admin. Error: %s</source>
-				<target>Bei der Kommunikation mit der OrientDB- Datenbank ist ein Fehler aufgetreten. Bitte kontaktieren Sie Ihren Systemadministrator. Fehlermeldung: %s</target>
+				<target phase-name="approval-1" state="final">Bei der Kommunikation mit der OrientDB- Datenbank ist ein Fehler aufgetreten. Bitte kontaktieren Sie Ihren Support. Fehlermeldung: %s</target>
 			</trans-unit>
 			<trans-unit id="tx_rkwsearch.backend.warning.header">
 				<source>Notice</source>
 				<target>Hinweis</target>
 			</trans-unit>
-			<trans-unit id="tx_rkwsearch.backend.warning.relation_error_1401886050">
+			<trans-unit approved="no" id="tx_rkwsearch.backend.warning.relation_error_1401886050">
 				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Please make sure, that all related records are submitted into the search database by saving them again and then save this record again. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
-				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Verknüpfungen zu anderen Datensätzen könnten gesetzt werden. Bitte stellen Sie sicher, dass die mit diesem Datensatz verknüpften Datensätze in die Suchdatenbank übertragen wurden, indem Sie diese erneut speichern und speichern Sie anschließend dieses Datensatz erneut. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+				<target phase-name="approval-1" state="final">Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Verknüpfungen zu anderen Datensätzen könnten gesetzt werden. Bitte stellen Sie sicher, dass die mit diesem Datensatz verknüpften Datensätze in die Suchdatenbank übertragen wurden, indem Sie diese erneut speichern und speichern Sie anschließend dieses Datensatz erneut. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Support. Fehlermeldung: %s</target>
 			</trans-unit>
-			<trans-unit id="tx_rkwsearch.backend.warning.workspace_error_1401889803">
+			<trans-unit approved="no" id="tx_rkwsearch.backend.warning.workspace_error_1401889803">
 				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but not all relations to other records could be set. Some of the records that are related to this record are not yet published. They have been ignored. Please publish them to the live environment and then save this record again to submit all set relations to the search database. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
-				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Beziehungen zu anderen Datensätzen könnten gesetzt werden. Einige der verknüpften Datensätze wurden noch nicht veröffentlicht. Bitte veröffentlichen Sie diese Datensätze und speichern Sie anschließend diesen Datensatz erneut, um alle gesetzten Verknüpfungen an die Suchdatenbank zu übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+				<target phase-name="approval-1" state="final">Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, aber nicht alle Beziehungen zu anderen Datensätzen könnten gesetzt werden. Einige der verknüpften Datensätze wurden noch nicht veröffentlicht. Bitte veröffentlichen Sie diese Datensätze und speichern Sie anschließend diesen Datensatz erneut, um alle gesetzten Verknüpfungen an die Suchdatenbank zu übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Support. Fehlermeldung: %s</target>
 			</trans-unit>
-			<trans-unit id="tx_rkwsearch.backend.warning.little_problem_1399294227">
+			<trans-unit approved="no" id="tx_rkwsearch.backend.warning.little_problem_1399294227">
 				<source>An error occurred when trying to transfer your changes to OrientDB database. Your changes have been saved, but could not be submitted into the search database. If you just edited or created a content-element on a page, try opening the page properties of the current page and save them again. This should transfer the whole page including it's contents to OrientDB. If that doesn't help or if this error shows up again, please contact your system admin. Error: %s</source>
-				<target>Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, konnten aber nicht in die Suchdatenbank übertragen werden. Falls Sie gerade ein Inhaltselement bearbeitet oder angelegt haben, versuchen Sie die Seiteneigenschaften der aktuellen Seite zu öffnen und zu speichern. Dies sollte die gesamte Seite mit ihren Inhalten in die Suchdatenbank übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Systemadministrator. Fehlermeldung: %s</target>
+				<target phase-name="approval-1" state="final">Bei der Übertragung der Daten zur OrientDB- Datenbank ist ein Fehler aufgetreten. Ihre Änderungen wurden gespeichert, konnten aber nicht in die Suchdatenbank übertragen werden. Falls Sie gerade ein Inhaltselement bearbeitet oder angelegt haben, versuchen Sie die Seiteneigenschaften der aktuellen Seite zu öffnen und zu speichern. Dies sollte die gesamte Seite mit ihren Inhalten in die Suchdatenbank übertragen. Wenn dies nicht hilft oder das Problem wieder auftritt, kontaktieren Sie bitte Ihren Support. Fehlermeldung: %s</target>
 			</trans-unit>
             <trans-unit id="tx_rkwsearch.backend.warning.not_in_rootline_1495445181">
                 <source>Dataset has been ignored by OrientDB database, because it is not within the defined rootline.</source>
@@ -306,9 +311,9 @@
 				<source>Website</source>
 				<target>Website</target>
 			</trans-unit>
-			<trans-unit id="partials_search_result_boxes_consultant.labelConsultant">
+			<trans-unit approved="no" id="partials_search_result_boxes_consultant.labelConsultant">
 				<source>Consultant</source>
-				<target>Energieberater</target>
+				<target phase-name="approval-1" state="final">Energieberater / Engergieberaterin</target>
 			</trans-unit>
 			<trans-unit id="partials_search_result_boxes_consultant.labelConsultantRkw">
 				<source>RKW Network</source>
